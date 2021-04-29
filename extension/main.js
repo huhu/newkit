@@ -1,6 +1,12 @@
 const c = new Compat();
 const commandManager = new CommandManager(
     new HelpCommand(),
+    new OpenCommand('update', 'Update to the latest new shortcuts.',
+        "https://whats.new/shortcuts/",
+        {
+            content: ':update',
+            description: `Press ${c.match("Enter")} to sync the latest new shortcuts.`,
+        }),
     new HistoryCommand(),
 );
 
