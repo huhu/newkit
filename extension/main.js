@@ -9,26 +9,36 @@ const commandManager = new CommandManager(
         }),
     new HistoryCommand(),
 );
+const searcher = new Searcher(shortcuts);
 
 const defaultSuggestion = `Oh My New!`;
 const omnibox = new Omnibox(defaultSuggestion, c.omniboxPageSize());
 
 omnibox.bootstrap({
     onSearch: (query) => {
-        return [];
+        return searcher.search(query);
     },
     onFormat: (index, item) => {
         return {
-            content: "",
-            description: "",
+            content: `https://${item.name}.new`,
+            description: `New: ${c.match(item.name)} - ${item.product} ${c.dim(c.escape(item.desc))}`,
         };
+    },
+    onAppend: (query) => {
+        return [{
+            content: "k",
+            description: `Not new shortcut ${query} found`,
+        }]
     },
     afterNavigated: (query, result) => {
         // Ignore the command history
         if (query && query.startsWith(":")) return;
 
         HistoryCommand.record(query, result)
-    }
+    },
+    onEmptyNavigate: (content, disposition) => {
+        commandManager.handleCommandEnterEvent(content, disposition);
+    },
 });
 
 omnibox.addPrefixQueryEvent(":", {

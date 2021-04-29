@@ -14,6 +14,6 @@ local json = manifest.new(
 )
              .addIcons(icons())
              .addBackgroundScripts(utils.js_files('command', ['help']))
-             .addBackgroundScripts(['main.js']);
+             .addBackgroundScripts(['shortcuts.js', 'search.js', 'main.js']);
 
 json
