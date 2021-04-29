@@ -15,6 +15,8 @@ function parseShortcuts() {
         }
     }
 
-    // console.log(JSON.stringify(shortcuts));
+    console.log(JSON.stringify(shortcuts));
     return shortcuts;
 }
+
+parseShortcuts();

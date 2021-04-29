@@ -10,10 +10,16 @@ local json = manifest.new(
   name='Oh My New',
   version='0.1',
   keyword='new',
-  description='Oh! You can new everything in the address bar.t!',
+  description='Oh! You can new everything in the address bar!',
 )
              .addIcons(icons())
+             .addWebAccessibleResources(['parse.js'])
              .addBackgroundScripts(utils.js_files('command', ['help']))
-             .addBackgroundScripts(['shortcuts.js', 'search.js', 'main.js']);
+             .addBackgroundScripts(['parse.js', 'shortcuts.js', 'search.js', 'main.js'])
+             .addContentScript(
+               matches=['*://whats.new/shortcuts*'],
+               js=['content-scripts.js'],
+               css=[],
+             );
 
 json
