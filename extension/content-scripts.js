@@ -15,3 +15,16 @@ function injectScripts(paths) {
 document.addEventListener("DOMContentLoaded", () => {
     injectScripts(["parse.js"]);
 });
+
+window.addEventListener("message", function (event) {
+    if (event.source === window &&
+        event.data &&
+        event.data.direction === "omn:update-index") {
+        chrome.runtime.sendMessage({action: `update-index`, ...event.data.message},
+            (response) => {
+                console.log(response);
+            }
+        );
+    }
+});
+

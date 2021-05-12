@@ -9,7 +9,7 @@ const commandManager = new CommandManager(
         }),
     new HistoryCommand(),
 );
-const searcher = new Searcher(shortcuts);
+let searcher = new Searcher(shortcuts);
 
 const defaultSuggestion = `Oh My New!`;
 const omnibox = new Omnibox(defaultSuggestion, c.omniboxPageSize());
@@ -28,13 +28,13 @@ omnibox.bootstrap({
         return [{
             content: "k",
             description: `Not new shortcut ${query} found`,
-        }]
+        }];
     },
     afterNavigated: (query, result) => {
         // Ignore the command history
         if (query && query.startsWith(":")) return;
 
-        HistoryCommand.record(query, result)
+        HistoryCommand.record(query, result);
     },
     onEmptyNavigate: (content, disposition) => {
         commandManager.handleCommandEnterEvent(content, disposition);
@@ -51,3 +51,14 @@ let fileNewIssue = "title=Have you found a bug? Did you feel something was missi
 chrome.runtime.setUninstallURL(
     `https://github.com/huhu/oh-my-new/issues/new?${encodeURI(fileNewIssue)}`
 );
+
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    switch (message.action) {
+        case "update-index": {
+            searcher = new Searcher(message.index);
+            sendResponse(true);
+            break;
+        }
+    }
+    return true;
+});
