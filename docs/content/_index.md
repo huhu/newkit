@@ -7,10 +7,9 @@ sort_by = "weight"
 
 The command system brings a handy set of useful and convenient commands to you. Each command starts with a **:** (colon), followed by the name, and function differently in individual. Those commands including but not limited to:
 
-- `:help` - Show the help messages.
-- `:header` - Show all C++ header libraries.
-- `:posix` - Show all POSIX [system interfaces](https://pubs.opengroup.org/onlinepubs/9699919799/functions/contents.html).
-- `:history` - Show your local search history
+- `:help` - show all help messages
+- `:update` - open the [update page](https://whats.new/shortcuts/) to sync the latest shortcuts automatically.
+- `:history` - show your local search history
 
 # Miscellaneous
 
