@@ -15,7 +15,7 @@ local json = manifest.new(
              .addIcons(icons())
              .addWebAccessibleResources(['parse.js'])
              .addBackgroundScripts(utils.js_files('command', ['help']))
-             .addBackgroundScripts(['parse.js', 'shortcuts.js', 'search.js', 'main.js'])
+             .addBackgroundScripts(['shortcuts.js', 'search.js', 'main.js'])
              .addContentScript(
                matches=['*://whats.new/shortcuts*'],
                js=['content-scripts.js'],
