@@ -24,12 +24,6 @@ omnibox.bootstrap({
             description: `New: ${c.match(item.name)} - ${item.product} ${c.dim(c.escape(item.desc))}`,
         };
     },
-    onAppend: (query) => {
-        return [{
-            content: "k",
-            description: `Not new shortcut ${query} found`,
-        }];
-    },
     afterNavigated: (query, result) => {
         // Ignore the command history
         if (query && query.startsWith(":")) return;
