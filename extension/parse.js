@@ -31,6 +31,8 @@
 
     let shortcuts = parseShortcuts();
     updateIndex(shortcuts).then(() => {
-        alert("Oh-my-new: All shortcuts has synced!");
+        setTimeout(() => {
+            alert("Oh-my-new: All shortcuts has synced!");
+        }, 2000);
     });
 })();
