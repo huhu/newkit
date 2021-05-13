@@ -1,5 +1,7 @@
 # oh-my-new
 
+<img align="right" width="200" src="extension/logo.png">
+
 ### Oh! You can new everything in the address bar.
 
 [![license-apache](https://img.shields.io/badge/license-Apache-yellow.svg)](https://github.com/huhu/oh-my-new/blob/master/LICENSE-APACHE)

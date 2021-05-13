@@ -18,7 +18,7 @@ highlight_theme = "inspired-github"
 [extra]
 # Put all your custom variables here
 juice_logo_name = "Oh My New"
-juice_logo_path = "logo.png"
+juice_logo_path = "logo.svg"
 juice_extra_menu = [
     { title = "Github", link = "https://github.com/huhu/oh-my-new"}
 ]
