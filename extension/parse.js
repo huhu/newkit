@@ -17,12 +17,15 @@
             product = product.textContent.trim();
             desc = desc.textContent.trim();
             for (let link of links.querySelectorAll("a")) {
-                let shortcut = new URL(link.href.trim()).hostname;
-                shortcuts.push({
-                    product,
-                    desc,
-                    shortcut,
-                })
+                let href = link.href.trim();
+                if (href && href.includes('.new')) {
+                    let shortcut = new URL(link.href.trim()).hostname;
+                    shortcuts.push({
+                        product,
+                        desc,
+                        shortcut,
+                    });
+                }
             }
         }
 
