@@ -7,7 +7,7 @@ local icons() = {
 };
 
 local json = manifest.new(
-  name='Oh My New',
+  name='Newkit',
   version='0.1',
   keyword='new',
   description='Oh! You can new everything in the address bar!',

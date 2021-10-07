@@ -17,10 +17,10 @@ highlight_theme = "inspired-github"
 
 [extra]
 # Put all your custom variables here
-juice_logo_name = "Oh My New"
+juice_logo_name = "Newkit"
 juice_logo_path = "logo.svg"
 juice_extra_menu = [
-    { title = "Github", link = "https://github.com/huhu/oh-my-new"}
+    { title = "Github", link = "https://github.com/huhu/newkit"}
 ]
-meta_title = "Oh My New"
-meta_description = "Oh My New!"
+meta_title = "Newkit"
+meta_description = "Oh My Newkit!"

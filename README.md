@@ -1,16 +1,16 @@
-# oh-my-new
+# Newkit
 
 <img align="right" width="200" src="extension/logo.png">
 
 ### Oh! You can new everything in the address bar.
 
-[![license-apache](https://img.shields.io/badge/license-Apache-yellow.svg)](https://github.com/huhu/oh-my-new/blob/master/LICENSE-APACHE)
+[![license-apache](https://img.shields.io/badge/license-Apache-yellow.svg)](https://github.com/huhu/newkit/blob/master/LICENSE-APACHE)
 
 ## Installation
 
-- [Chrome Web Store](https://chrome.google.com/webstore/detail/oh-my-new/)
+- [Chrome Web Store](https://chrome.google.com/webstore/detail/newkit/)
 
-- [Firefox](https://addons.mozilla.org/en-US/firefox/addon/oh-my-new/)
+- [Firefox](https://addons.mozilla.org/en-US/firefox/addon/newkit/)
 
 - [Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/)
 
@@ -26,9 +26,9 @@ please check `jsonnet`'s [README](https://github.com/google/jsonnet#packages).
 For Linux users, the `snap` is a good choice to [install jsonnet](https://snapcraft.io/install/jsonnet/ubuntu).
 
 ```bash
-$ git clone --recursive https://github.com/huhu/oh-my-new
-Cloning into 'oh-my-new'...
-$ cd oh-my-new
+$ git clone --recursive https://github.com/huhu/newkit
+Cloning into 'newkit'...
+$ cd newkit
 
 $ make chrome # For Chrome version
 

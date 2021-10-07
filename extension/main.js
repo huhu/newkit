@@ -12,7 +12,7 @@ const c = new Compat();
     );
     let searcher = new Searcher(JSON.parse(localStorage.getItem('shortcut-index')) || shortcuts);
 
-    const defaultSuggestion = `Oh My New!`;
+    const defaultSuggestion = `Oh My Newkit!`;
     const omnibox = new Omnibox(defaultSuggestion, c.omniboxPageSize());
 
     omnibox.bootstrap({
@@ -58,5 +58,5 @@ const c = new Compat();
 
 const fileNewIssue = "title=Have you found a bug? Did you feel something was missing?&body=Whatever it was, we'd love to hear from you.";
 chrome.runtime.setUninstallURL(
-    `https://github.com/huhu/oh-my-new/issues/new?${encodeURI(fileNewIssue)}`
+    `https://github.com/huhu/newkit/issues/new?${encodeURI(fileNewIssue)}`
 );
