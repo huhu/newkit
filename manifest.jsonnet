@@ -12,14 +12,15 @@ local json = manifest.new(
   keyword='new',
   description='Oh! You can new everything in the address bar!',
 )
-             .addIcons(icons())
-             .addWebAccessibleResources(['parse.js'])
-             .addBackgroundScripts(utils.js_files('command', ['help']))
-             .addBackgroundScripts(['shortcuts.js', 'search.js', 'main.js'])
-             .addContentScript(
-               matches=['*://whats.new/shortcuts*'],
-               js=['content-scripts.js'],
-               css=[],
-             );
+.addIcons(icons())
+.addPermissions(['storage', 'unlimitedStorage'])
+.addWebAccessibleResources(['parse.js'])
+.addBackgroundScripts(utils.js_files('command', ['help']))
+.addBackgroundScripts(['shortcuts.js', 'search.js', 'index-manager.js', 'main.js'])
+.addContentScript(
+    matches=['*://whats.new/shortcuts*'],
+    js=['content-scripts.js'],
+    css=[],
+);
 
 json

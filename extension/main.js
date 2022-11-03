@@ -10,7 +10,7 @@ const c = new Compat();
             }),
         new HistoryCommand(),
     );
-    let searcher = new Searcher(JSON.parse(localStorage.getItem('shortcut-index')) || shortcuts);
+    let searcher = new Searcher(await IndexManager.getShortcutsIndex());
 
     const defaultSuggestion = `Oh My Newkit!`;
     const omnibox = new Omnibox(defaultSuggestion, c.omniboxPageSize());
@@ -21,7 +21,7 @@ const c = new Compat();
         },
         onFormat: (index, item) => {
             return {
-                content: `https://${item.name}.new`,
+                content: `https://${item.shortcut}`,
                 description: `New: ${c.match(item.name)} - ${item.product} ${c.dim(c.escape(item.desc))}`,
             };
         },
@@ -46,7 +46,7 @@ const c = new Compat();
     chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         switch (message.action) {
             case "update-index": {
-                localStorage.setItem('shortcut-index', JSON.stringify(message.index));
+                IndexManager.setShortcutsIndex(index);
                 searcher = new Searcher(message.index);
                 sendResponse(true);
                 break;
