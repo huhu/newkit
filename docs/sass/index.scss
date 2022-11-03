@@ -45,10 +45,34 @@
   width: 215px;
 }
 
+.nav-item {
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  color: #ecbe62;
+}
+
+.nav-item:hover {
+  color: #ecbe62;
+}
+
+.logo {
+  font-family: "Alfa Slab One", serif;
+  font-size: 32px;
+  color: #f4bd4e;
+  display: flex;
+  align-items: center;
+  margin: 0 40px;
+  text-shadow: 3px 3px 0 #000, -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 3px 3px 0 #000;
+}
+
 @media screen and (max-width: 768px) {
   .logo {
     font-size: 16px;
     margin: 10px;
+    text-shadow: 1.5px 1.5px 0 #000, -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
 
     img {
       width: 25px;
