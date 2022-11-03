@@ -1,7 +1,7 @@
 (function () {
     function updateIndex(index) {
         window.postMessage({
-            direction: "omn:update-index",
+            direction: "newkit:update-index",
             message: {
                 index,
             },
@@ -20,11 +20,12 @@
                 let href = link.href.trim();
                 if (href && href.includes('.new')) {
                     let shortcut = new URL(link.href.trim()).hostname;
-                    shortcuts.push({
+                    // Array of [shortcut, product, description]
+                    shortcuts.push([
+                        shortcut,
                         product,
                         desc,
-                        shortcut,
-                    });
+                    ]);
                 }
             }
         }

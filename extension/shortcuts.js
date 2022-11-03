@@ -1,1 +1,2937 @@
-const shortcuts = [{"product":"Instantish","desc":"Create a new ticket issue and quickly share it.","shortcut":"issue.new"},{"product":"bit.io","desc":"Easily query bit.io data repositories.","shortcut":"query.new"},{"product":"Aircards","desc":"Easily create and deploy WebAR activation codes to use on your next augmented reality project.","shortcut":"ar.new"},{"product":"Bit.io","desc":"Upload data to your Bit.io cloud database.","shortcut":"io.new"},{"product":"CodePen","desc":"Prototype your frontend code in CodePen's online development sandbox.","shortcut":"pen.new"},{"product":"CodeSandbox","desc":"Create a new vue.js project online with CodeSandbox.","shortcut":"vue.new"},{"product":"CodeSandbox","desc":"Create a new Typescript project online with CodeSandbox.","shortcut":"ts.new"},{"product":"CodeSandbox","desc":"Create a new Javascript project online with CodeSandbox.","shortcut":"js.new"},{"product":"CodeSandbox","desc":"Create a new React project online with CodeSandbox.","shortcut":"react.new"},{"product":"CodeSandbox","desc":"Create a new Angular project online CodeSandbox.","shortcut":"ng.new"},{"product":"CodeSandbox","desc":"Create a new project online with CodeSandbox.","shortcut":"csb.new"},{"product":"CodeSandbox","desc":"Create a new Svelte project using CodeSandbox.","shortcut":"svelte.new"},{"product":"Codesandbox.io","desc":"Open up a sandbox for your next development project with Node.js.","shortcut":"nodejs.new"},{"product":"Codespace","desc":"Create a new snippet on Codespace.","shortcut":"snippet.new"},{"product":"Confluent","desc":"Design the optimal Confluence cluster for your Apache Kafka deployment.","shortcut":"kafka.new"},{"product":"Data World","desc":"Create a new Data Catalog file.","shortcut":"datacatalog.new"},{"product":"DataStax Astra","desc":"Set up your Cassandra database on the cloud with DataStax Astra.","shortcut":"cassandra.new"},{"product":"DataStax Astra","desc":"Set up your Cassandra database on the cloud with DataStax Astra.","shortcut":"db.new"},{"product":"DataStax Astra","desc":"Set up your Cassandra database on the cloud with DataStax Astra.","shortcut":"graphql.new"},{"product":"DataStax Astra","desc":"Set up your Cassandra database on the cloud with DataStax Astra.","shortcut":"keyspace.new"},{"product":"DataStax Astra","desc":"Set up your Cassandra database on the cloud with DataStax Astra.","shortcut":"rest.new"},{"product":"Editor X","desc":"Build your website using Editor X's online tool.","shortcut":"editorx.new"},{"product":"Flutter","desc":"Prototype your app using Flutter's online editor.","shortcut":"flutter.new"},{"product":"GitHub","desc":"Open new GitHub gists.","shortcut":"gist.new"},{"product":"GitHub","desc":"Open new GitHub repositories.","shortcut":"github.new"},{"product":"GitHub","desc":"Open new GitHub repositories.","shortcut":"repo.new"},{"product":"GitHub","desc":"Turn your data scripts into shareable web apps within minutes on GitHub.","shortcut":"streamlit.new"},{"product":"Glitch","desc":"Code full-stack apps in your browser and collaborate live.","shortcut":"glitch.new"},{"product":"Google","desc":"Train custom machine learning models with minimal experience and effort using Google's ML tools.","shortcut":"model.new"},{"product":"Google AppScript","desc":"Create and share new editor functions using Google App Script.","shortcut":"script.new"},{"product":"Ionic","desc":"Building high quality, cross-platform native and web app experiences with Ionic.","shortcut":"ionic.new"},{"product":"Kodular","desc":"Start building an app using Kodular's drag and drop development suite.","shortcut":"apps.new"},{"product":"Makerpad","desc":"Share your workflows and help users build software without coding.","shortcut":"makerpad.new"},{"product":"Makerpad","desc":"Share your workflows and help users build software without coding.","shortcut":"nocode.new"},{"product":"MathWorks","desc":"Use MATLAB and Simulink through your web browser.","shortcut":"mathworks.new"},{"product":"MathWorks","desc":"Use MATLAB and Simulink through your web browser.","shortcut":"matlab.new"},{"product":"MathWorks","desc":"Use MATLAB and Simulink through your web browser.","shortcut":"simulink.new"},{"product":"Microsoft","desc":"Test a .NET application in Microsoft's Try .NET environment.","shortcut":"dotnet.new"},{"product":"Microsoft Visual Studio","desc":"Create a new Visual Studio codespace for your project.","shortcut":"env.new"},{"product":"Microsoft Visual Studio","desc":"Create a new Visual Studio codespace for your project.","shortcut":"vso.new"},{"product":"Microsoft Visual Studio","desc":"Create a new Visual Studio codespace for your project.","shortcut":"vsonline.new"},{"product":"Miro","desc":"Build wireframes for your project using Miro.","shortcut":"wireframe.new"},{"product":"Pwabbit","desc":"Code a new website using Pwabbit's simple editor.","shortcut":"pwa.new"},{"product":"Railway","desc":"Create a new Railway deployment in the cloud.","shortcut":"dev.new"},{"product":"REPL","desc":"Create and complie a bash script with REPL.","shortcut":"repl.new"},{"product":"RunKit","desc":"Prototype and launch your APIs using RunKit.","shortcut":"api.new"},{"product":"RunKit","desc":"Prototype and launch your APIs using RunKit.","shortcut":"playground.new"},{"product":"Runkit","desc":"Create a new notebook for your API on RunKit.","shortcut":"folder.new"},{"product":"Scrimba","desc":"Create a new HTML/CSS/JS page in Scrimba.","shortcut":"css.new"},{"product":"Scrimba","desc":"Create a new HTML/CSS/JS page in Scrimba.","shortcut":"html.new"},{"product":"Scrimba","desc":"Create a new HTML/CSS/JS page in Scrimba.","shortcut":"scrimba.new"},{"product":"Scrimba","desc":"Create an HTML and Typescript page with Scrimba.","shortcut":"typescript.new"},{"product":"SeekWell","desc":"Write SQL queries for your data in other applications.","shortcut":"sql.new"},{"product":"Stackbit","desc":"Create a new Jamstack site.","shortcut":"jamstack.new"},{"product":"Stackery","desc":"Audit project templates and visualize results using Stackery.","shortcut":"stack.new"},{"product":"Tesserai","desc":"Charge users who use your APIs with Tesserai.","shortcut":"saas.new"},{"product":"Vercel","desc":"Import your front-end projects to Vercel for preview and deployment.","shortcut":"deploy.new"},{"product":"Vercel","desc":"Import your front-end projects to Vercel for preview and deployment.","shortcut":"zeit.new"},{"product":"Zoho","desc":"Start a new document using Zoho.","shortcut":"write.new"},{"product":"Adobe","desc":"Fill and sign PDF documents and forms with Adobe Acrobat.","shortcut":"sign.new"},{"product":"Adobe","desc":"Compress PDF documents with simple drag and drop with Adobe Acrobat.","shortcut":"compresspdf.new"},{"product":"Adobe","desc":"Combine PDFs into one file with Adobe.","shortcut":"mergepdf.new"},{"product":"Adobe","desc":"Convert PDFs to Word documents with Adobe.","shortcut":"pdftoword.new"},{"product":"Adobe","desc":"Rotate your PDF pages using Adobe.","shortcut":"rotatepdf.new"},{"product":"AdPlugg","desc":"Create a fully managed ad with impression and click tracking with AdPlugg.","shortcut":"ad.new"},{"product":"Aftership","desc":"Track your shipments across various couriers.","shortcut":"track.new"},{"product":"American Fidelity","desc":"File a claim towards your American Fidelity insurance.","shortcut":"afclaim.new"},{"product":"American Fidelity","desc":"Submit a reimbursement request from your American Fidelity account.","shortcut":"afreimburse.new"},{"product":"Bankwest","desc":"Get started on a business loan application with Bankwest.","shortcut":"businessloan.new"},{"product":"bill.com","desc":"Create and send bills to your clients using bill.com.","shortcut":"bill.new"},{"product":"bill.com","desc":"Create an invoice for your business using bill.com.","shortcut":"inv.new"},{"product":"Bill.com","desc":"Easily pay international and domestic vendors the same way with Bill.com.","shortcut":"inbox.new"},{"product":"Buffer","desc":"Schedule and manage your social media posts.","shortcut":"buffer.new"},{"product":"Burner","desc":"Create a second phone number with Burner.","shortcut":"burner.new"},{"product":"Burner","desc":"Create a second phone number with Burner.","shortcut":"number.new"},{"product":"Burner","desc":"Create a second phone number with Burner.","shortcut":"phonenumber.new"},{"product":"Business Modeler Preview","desc":"Create BPMN and DMN files online for your business.","shortcut":"bpmn.new"},{"product":"Business Modeler Preview","desc":"Create BPMN and DMN files online for your business.","shortcut":"dmn.new"},{"product":"Canva","desc":"Design an appetizing menu using customizable templates from Canva.","shortcut":"menu.new"},{"product":"Canva","desc":"Create a professional-looking resume using templates from Canva.","shortcut":"resumes.new"},{"product":"ConvertKit","desc":"Design a landing page for your project using ConvertKit.","shortcut":"landingpage.new"},{"product":"DataStax","desc":"Get started on building a database using DataStax.","shortcut":"cassandra.new"},{"product":"DataStax, Inc","desc":"Create a database with DataStax.","shortcut":"rest.new"},{"product":"Discover Card","desc":"Design a new credit card with Discover Card.","shortcut":"creditcard.new"},{"product":"Duda","desc":"Create your website and manage your business online.","shortcut":"duda.new"},{"product":"eBay","desc":"Sell products on eBay.","shortcut":"sell.new"},{"product":"Edge","desc":"Create your first Edge Content Delivery deployment.","shortcut":"cdn.new"},{"product":"eToro Group LTD","desc":"Purchase cryptocurrency eToro.","shortcut":"copytrader.new"},{"product":"eVenture Ltd","desc":"Use a proxy server without having to connect to a VPN with eVenture.","shortcut":"vpn.new"},{"product":"Find Jobs","desc":"Post a new job listing with Find Jobs.","shortcut":"job.new"},{"product":"Find Jobs","desc":"Post a new job listing with Find Jobs.","shortcut":"jobs.new"},{"product":"Flywheel Software","desc":"Segment your business' customers with Flywheel Software.","shortcut":"segment.new"},{"product":"Freeway Camper","desc":"Book your next camping adventure with Freeway Camper.","shortcut":"camping.new"},{"product":"GoDaddy","desc":"Build a website for your business with GoDaddy.","shortcut":"websitebuilder.new"},{"product":"gotomaxx software GmbH","desc":"Create a new invoice using gotomaxx.","shortcut":"letter.new"},{"product":"gotomaxx software GmbH","desc":"Create a new invoice using gotomaxx.","shortcut":"pdfmailer.new"},{"product":"gotomaxx software GmbH","desc":"Create a new invoice using gotomaxx.","shortcut":"xrechnung.new"},{"product":"HoneyBook","desc":"Create a professional email signature in 30 seconds HoneyBook.","shortcut":"emailsignature.new"},{"product":"Indeed, Inc","desc":"Create your online resume with Indeed.","shortcut":"profile.new"},{"product":"Inspirational People","desc":"Submit content to InspirationalPeople.org using their markdown editor.","shortcut":"ip.new"},{"product":"JobVector","desc":"Find a new job with JobVector.","shortcut":"recruit.new"},{"product":"La Poste","desc":"Upload documents to your Digiposte account.","shortcut":"digiposte.new"},{"product":"Microsoft Teams","desc":"Chat with your team using Microsoft Teams.","shortcut":"teams.new"},{"product":"Mobilistics","desc":"Set up a custom server for your business or project.","shortcut":"server.new"},{"product":"My","desc":"Create shortened URLs for common tasks with my.new.","shortcut":"my.new"},{"product":"Namecheap","desc":"Design personalized business cards with Namecheap.","shortcut":"businesscard.new"},{"product":"Nicejob","desc":"Review a local business with NiceJob.","shortcut":"review.new"},{"product":"novahq.com","desc":"Create a new business transaction with Nova.","shortcut":"nova.new"},{"product":"Open","desc":"Add an expense to your Open account.","shortcut":"expense.new"},{"product":"Open","desc":"Create a bill in your Open account.","shortcut":"gst.new"},{"product":"Open","desc":"Transfer payments and funds using Open.","shortcut":"payout.new"},{"product":"Open","desc":"Create a new banking account for your business, using Open.","shortcut":"banking.new"},{"product":"Personio GmbH","desc":"Track your candidate pipeline using Personio.","shortcut":"candidate.new"},{"product":"Personio GmbH","desc":"Track employee absence using Personio.","shortcut":"absence.new"},{"product":"Pitch Software GmbH","desc":"Collaborate on presentations using Pitch Software.","shortcut":"pitch.new"},{"product":"Profit.co","desc":"Create new objectives and key results for your business.","shortcut":"okr.new"},{"product":"Razorpay","desc":"Create a new payment link with Razorpay.","shortcut":"pl.new"},{"product":"Razorpay","desc":"Receive quick payments with a button from Razorpay.","shortcut":"button.new"},{"product":"Razorpay","desc":"Allow others to make payments using Razorpay.","shortcut":"upi.new"},{"product":"Re:new","desc":"Generate friendlier email responses with Re:new.","shortcut":"re.new"},{"product":"Ringpin","desc":"Create a mobile optimized landing page with Ringpin.","shortcut":"me.new"},{"product":"Ringpin","desc":"Create a mobile optimized landing page with Ringpin","shortcut":"me.new"},{"product":"ScanBuddy.ai","desc":"Create contacts by scanning your business cards.","shortcut":"contact.new"},{"product":"ScanBuddy.ai","desc":"Create contacts by scanning your business cards.","shortcut":"leads.new"},{"product":"Segment","desc":"Create a new workspace on Segment's customer data platform.","shortcut":"cdp.new"},{"product":"Shopify","desc":"Start a new online shop on Shopify.","shortcut":"shopify.new"},{"product":"Shopify","desc":"Designate your business name on Shopify.","shortcut":"businessname.new"},{"product":"Shopify Compass","desc":"Start learning from a list of global entrepreneurs with Shopify Compass.","shortcut":"start.new"},{"product":"Sopimustieto","desc":"Create business agreements using common templates.","shortcut":"agreement.new"},{"product":"Stripe","desc":"Create an invoice for your business using Stripe.","shortcut":"invoice.new"},{"product":"Stripe","desc":"Create an invoice for your business using Stripe.","shortcut":"invoices.new"},{"product":"Stripe","desc":"Send and accept payments using Stripe.","shortcut":"payment.new"},{"product":"Stripe","desc":"Send and accept payments using Stripe.","shortcut":"payments.new"},{"product":"Stripe","desc":"Add a new offering to your Stripe product catalog.","shortcut":"product.new"},{"product":"Stripe","desc":"Create new subscription accounts for your customers using Stripe.","shortcut":"subscription.new"},{"product":"Stripe","desc":"Create new subscription accounts for your customers using Stripe.","shortcut":"subscriptions.new"},{"product":"SurveyMonkey","desc":"Create a new survey using SurveyMonkey.","shortcut":"surveymonkey.new"},{"product":"SurveyMonkey","desc":"Create on-brand feedback surveys in minutes with SurveyMonkey.","shortcut":"survey.new"},{"product":"SurveyMonkey","desc":"Create on-brand feedback surveys in minutes with SurveyMonkey.","shortcut":"surveymonkey.new"},{"product":"Topaz","desc":"Send a fax using Topaz.","shortcut":"fax.new"},{"product":"Trainstation Inc","desc":"Create a new workout on Trainstation.","shortcut":"workout.new"},{"product":"UENI","desc":"Build a website for your business with UENI.","shortcut":"car.new"},{"product":"UL LLC","desc":"Build an OSHA SDS document with UL's builder.","shortcut":"ghs.new"},{"product":"UL LLC","desc":"Build an OSHA SDS document with UL's builder.","shortcut":"sds.new"},{"product":"Userlytics","desc":"Design and launch a user test with Userlytics.","shortcut":"usertest.new"},{"product":"Vauban","desc":"Design your investment fund using Vauban.","shortcut":"fund.new"},{"product":"Wix","desc":"Build a new website using Wix.","shortcut":"wix.new"},{"product":"Wrike, Inc.","desc":"Upload files to the cloud using Wrike.","shortcut":"proof.new"},{"product":"ZipRecruiter","desc":"Create a job posting with ZipRecruiter.","shortcut":"hire.new"},{"product":"ZipRecruiter","desc":"Create a job posting with ZipRecruiter.","shortcut":"hires.new"},{"product":"Zoho","desc":"Create new Manage Engine projects.","shortcut":"projects.new"},{"product":"Zoho","desc":"E-sign business documents using Zoho.","shortcut":"change.new"},{"product":"Zoho","desc":"E-sign business documents using Zoho.","shortcut":"esign.new"},{"product":"Zoho","desc":"E-sign business documents using Zoho.","shortcut":"purchase.new"},{"product":"Zoho","desc":"E-sign business documents using Zoho.","shortcut":"record.new"},{"product":"Adobe","desc":"Design beautiful social media posts and more with Adobe Spark.","shortcut":"create.new"},{"product":"Adobe","desc":"Design beautiful social media posts and more with Adobe Spark.","shortcut":"spark.new"},{"product":"Adobe","desc":"Design beautiful social media posts and more with Adobe Spark.","shortcut":"stories.new"},{"product":"Adobe","desc":"Convert JPG images to PDF with Adobe Acrobat.","shortcut":"jpgtopdf.new"},{"product":"Adobe","desc":"Create a new logo for your business with Adobe Spark.","shortcut":"logo.new"},{"product":"Adobe","desc":"Convert Microsoft Word documents to PDF.","shortcut":"wordtopdf.new"},{"product":"Adobe","desc":"Edit an image using Adobe Photoshop online.","shortcut":"photo.new"},{"product":"Adobe","desc":"Edit an image using Adobe Photoshop online.","shortcut":"photoshop.new"},{"product":"Adobe Inc.","desc":"Work with PDFs in your browser using Adobe Acrobat online services.","shortcut":"acrobat.new"},{"product":"Alarm.com Inc","desc":"Set an alarm.","shortcut":"alarm.new"},{"product":"Anchor","desc":"Record a new episode for your podcast using Anchor by Spotify.","shortcut":"episode.new"},{"product":"Anchor","desc":"Record a new episode for your podcast using Anchor by Spotify.","shortcut":"podcast.new"},{"product":"Automattic","desc":"Create a new blog post on your Wordpress blog.","shortcut":"post.new"},{"product":"Automattic","desc":"Create a new blog on wordpress.com.","shortcut":"blog.new"},{"product":"BeFunky","desc":"Quickly edit, filter, and enhance your photos with BeFunky.","shortcut":"befunky.new"},{"product":"BeFunky","desc":"Arrange multiple photos into a ready-to-share collage with BeFunky.","shortcut":"collage.new"},{"product":"Canva","desc":"Create a new Canva design with your team.","shortcut":"canva.new"},{"product":"Canva","desc":"Create a new Canva design with your team.","shortcut":"design.new"},{"product":"Canva","desc":"Create a new Canva poster with your team.","shortcut":"poster.new"},{"product":"Canva","desc":"Design your next social media post using templates from Canva.","shortcut":"socialpost.new"},{"product":"Canva","desc":"Design your next social media post using templates from Canva.","shortcut":"socialpost.new"},{"product":"Canva","desc":"Design a mug using customizable templates from Canva.","shortcut":"mug.new"},{"product":"Canva","desc":"Create a mood board or any type of photo collage using templates from Canva.","shortcut":"photocollage.new"},{"product":"Canva","desc":"Design a post card using one of Canva's many templates.","shortcut":"postcard.new"},{"product":"Canva","desc":"Design a post card using one of Canva's many templates.","shortcut":"postcards.new"},{"product":"Canva","desc":"Design a poster using one of Canva's many templates.","shortcut":"posters.new"},{"product":"Canva","desc":"Create a flyer using customizable templates from Canva.","shortcut":"prints.new"},{"product":"Canva","desc":"Design a social media post using templates from Canva.","shortcut":"social.new"},{"product":"Canva","desc":"Design a social media post using templates from Canva.","shortcut":"social.new"},{"product":"Canva","desc":"Design a social media post using templates from Canva.","shortcut":"socialmedia.new"},{"product":"Canva","desc":"Design a social media post using templates from Canva.","shortcut":"socialmedia.new"},{"product":"Canva","desc":"Design your own wallpaper using customizable templates from Canva.","shortcut":"wallpaper.new"},{"product":"Canva","desc":"Design a webpage using templates from Canva.","shortcut":"webpage.new"},{"product":"Canva","desc":"Design your wedding invitation using one of Canva's many templates.","shortcut":"wedding.new"},{"product":"Canva","desc":"Create a yearbook using a beautiful template from Canva.","shortcut":"yearbook.new"},{"product":"Canva","desc":"Create a beautiful brochure using Canva's customizable brochure templates.","shortcut":"brochure.new"},{"product":"Canva","desc":"Create a beautiful brochure using Canva's customizable brochure templates.","shortcut":"brochures.new"},{"product":"Canva","desc":"Create professional-looking business cards using Canva's customizable templates.","shortcut":"businesscards.new"},{"product":"Canva","desc":"Create a card for any occasion using Canva's customizable card templates.","shortcut":"cards.new"},{"product":"Confect","desc":"Design a new product feed with Confect.","shortcut":"creative.new"},{"product":"Creative Hub","desc":"Create and store files for your creative projects using Creative Hub.","shortcut":"creatives.new"},{"product":"Facet","desc":"Edit images using Facet's smart editor.","shortcut":"facet.new"},{"product":"Favicon","desc":"Generate a favicon for your website.","shortcut":"favicon.new"},{"product":"File.new","desc":"Write a quick note and share it with your friends.","shortcut":"file.new"},{"product":"flat.io","desc":"Write music online with this collaborative score editor.","shortcut":"score.new"},{"product":"Flipping Book","desc":"Convert PDFs into digital flipbooks you can share.","shortcut":"flipbook.new"},{"product":"Google","desc":"Start a new Jamboard with Google.","shortcut":"jam.new"},{"product":"Hatchful","desc":"Create a custom logo in seconds with Hatchful.","shortcut":"logos.new"},{"product":"hipherd","desc":"Build a travel inspiration board with hipherd.","shortcut":"travel.new"},{"product":"Hippo Video","desc":"Create a personalized video using Hippo Video.","shortcut":"videos.new"},{"product":"Hippo Video","desc":"Record or upload a new video.","shortcut":"collaborate.new"},{"product":"Image Editor","desc":"Edit images and photos online with Image Editor.","shortcut":"image.new"},{"product":"Kniterate","desc":"Create a custom design for your next knitwear project.","shortcut":"knit.new"},{"product":"Kniterate","desc":"Create a custom design for your next knitwear project.","shortcut":"wear.new"},{"product":"Luma","desc":"Create an event page for your Zoom event with Luma.","shortcut":"luma.new"},{"product":"makestories.io","desc":"Create a new web story with MakeStories.","shortcut":"webstory.new"},{"product":"Medium","desc":"Create a new story on Medium.","shortcut":"medium.new"},{"product":"Medium","desc":"Create a new story on Medium.","shortcut":"story.new"},{"product":"Miri","desc":"Create a new design using Miri.","shortcut":"canvas.new"},{"product":"Mux","desc":"Upload a video and make it streamable with Mux.","shortcut":"broadcast.new"},{"product":"Mux","desc":"Upload a video and make it streamable with Mux.","shortcut":"encode.new"},{"product":"Mux","desc":"Upload a video and make it streamable with Mux.","shortcut":"stream.new"},{"product":"My Brand New Logo","desc":"Create a new logo for your business and brand.","shortcut":"mybrand.new"},{"product":"Namecheap","desc":"Design a new business logo with Namecheap.","shortcut":"logomaker.new"},{"product":"Novecore Ltd.","desc":"Upload your music album details to Novecore.","shortcut":"album.new"},{"product":"Nulab","desc":"Create a new diagram online using Nulab.","shortcut":"cacoo.new"},{"product":"OnShape","desc":"Create a new CAD design online.","shortcut":"cad.new"},{"product":"Pally","desc":"Initiate spontaneous video chats with strangers using Pally.","shortcut":"match.new"},{"product":"sketch.io","desc":"Create a new sketch with sketch.io.","shortcut":"sketch.new"},{"product":"Skynet","desc":"Start a new blog.","shortcut":"internet.new"},{"product":"Spotify","desc":"Create a new Spotify playlist.","shortcut":"playlist.new"},{"product":"tella.tv","desc":"Edit your video online.","shortcut":"recording.new"},{"product":"TO THE NEW","desc":"Get started on a new blog post on TO THE NEW.","shortcut":"tothe.new"},{"product":"Top","desc":"Get started on a new blog post with Top.","shortcut":"top.new"},{"product":"Ultimate Guitar","desc":"Add a new tab to the Ultimate Guitar archive.","shortcut":"chord.new"},{"product":"Ultimate Guitar","desc":"Add a new tab to the Ultimate Guitar archive.","shortcut":"chords.new"},{"product":"Ultimate Guitar","desc":"Add a new tab to the Ultimate Guitar archive.","shortcut":"tab.new"},{"product":"Ultimate Guitar","desc":"Add a new tab to the Ultimate Guitar archive.","shortcut":"tabs.new"},{"product":"","desc":"Drag and drop a Microsoft Word, Excel, PowerPoint, or image file to convert to PDF.","shortcut":"convertpdf.new"},{"product":"","desc":"Drag and drop a Microsoft Word, Excel, PowerPoint, or image file to convert to PDF.","shortcut":"pdf.new"},{"product":"Monday.com","desc":"Create a new Monday.com board to manage tasks, projects, and team work.","shortcut":"automation.new"},{"product":"Monday.com","desc":"Create a new Monday.com board to manage tasks, projects, and team work.","shortcut":"checklist.new"},{"product":"Monday.com","desc":"Create a new Monday.com board to manage tasks, projects, and team work.","shortcut":"integration.new"},{"product":"Monday.com","desc":"Create a new Monday.com board to manage tasks, projects, and team work.","shortcut":"monday.new"},{"product":"Monday.com","desc":"Create a new Monday.com board to manage tasks, projects, and team work.","shortcut":"myweek.new"},{"product":"Monday.com","desc":"Create a new Monday.com board to manage tasks, projects, and team work.","shortcut":"notification.new"},{"product":"Monday.com","desc":"Create a new Monday.com board to manage tasks, projects, and team work.","shortcut":"process.new"},{"product":"Monday.com","desc":"Create a new Monday.com board to manage tasks, projects, and team work.","shortcut":"pulse.new"},{"product":"Monday.com","desc":"Create a new Monday.com board to manage tasks, projects, and team work.","shortcut":"status.new"},{"product":"Monday.com","desc":"Create a new Monday.com board to manage tasks, projects, and team work.","shortcut":"update.new"},{"product":"Monday.com","desc":"Create a new Monday.com board to manage tasks, projects, and team work.","shortcut":"view.new"},{"product":"Monday.com","desc":"Create a new Monday.com board to manage tasks, projects, and team work.","shortcut":"widget.new"},{"product":"Monday.com","desc":"Create a new Monday.com board to manage tasks, projects, and team work.","shortcut":"work.new"},{"product":"Monday.com","desc":"Create a new Monday.com board to manage tasks, projects, and team work.","shortcut":"workspace.new"},{"product":"Agenda Hero","desc":"Create a new agenda with Agenda Hero.","shortcut":"agenda.new"},{"product":"Asana","desc":"Add a new task to your Asana project.","shortcut":"asana.new"},{"product":"Asana","desc":"Add a new task to your Asana project.","shortcut":"task.new"},{"product":"bit.io","desc":"Create a new data repository on bit.io.","shortcut":"io.new"},{"product":"Bitly","desc":"Create memorable, short links to your website with Bitly.","shortcut":"bitly.new"},{"product":"Bitly","desc":"Create memorable, short links to your website with Bitly.","shortcut":"link.new"},{"product":"Board","desc":"Collaborate remotely on an online whiteboard.","shortcut":"board.new"},{"product":"Canva","desc":"Design the perfect Zoom background for your virtual meetings using Canva's customizable background templates.","shortcut":"background.new"},{"product":"Canyon","desc":"Create legal matters using Canyon.","shortcut":"matters.new"},{"product":"Carotrip","desc":"Book car, van, bus, SUV and limos in advance with Carotrip.","shortcut":"go.new"},{"product":"Coda","desc":"Create a new doc for teams that combines documents, spreadsheets, and building blocks.","shortcut":"coda.new"},{"product":"CompuSport","desc":"Manage your leagues using CompuSport.","shortcut":"league.new"},{"product":"CoScreen","desc":"Share your screen with your coworkers using CoScreen.","shortcut":"cs.new"},{"product":"creativehub","desc":"Share and comment on large files and chat live.","shortcut":"version.new"},{"product":"CV2You","desc":"Build a new resume with one of CV2You's customizable templates.","shortcut":"resume.new"},{"product":"Data World","desc":"Create a new project in data.world's data catalog.","shortcut":"dataproject.new"},{"product":"Data World","desc":"Create a new project in data.world's data catalog.","shortcut":"dataprojects.new"},{"product":"Data World","desc":"Add a new data set to your data.world data catalog.","shortcut":"dataset.new"},{"product":"Data World","desc":"Add a new data set to your data.world data catalog.","shortcut":"datasets.new"},{"product":"Demodesk","desc":"Launch an instant meeting with Demodesk.","shortcut":"demo.new"},{"product":"Diagrams.net","desc":"Create a flowchart diagram to map processes.","shortcut":"diagram.new"},{"product":"Diagrams.net","desc":"Create a flowchart diagram to map processes.","shortcut":"diagrams.new"},{"product":"Dropbox","desc":"Start a new workspace with Dropbox.","shortcut":"paper.new"},{"product":"FreeBusy","desc":"Send a calendar invite with FreeBusy.","shortcut":"calendar.new"},{"product":"Glean","desc":"Create a new multimedia note document using Glean.","shortcut":"glean.new"},{"product":"Google Calendar","desc":"Create and send a new Google Calendar invite.","shortcut":"cal.new"},{"product":"Google Calendar","desc":"Create and send a new Google Calendar invite.","shortcut":"meeting.new"},{"product":"Google Docs","desc":"Create a new document using Google Docs.","shortcut":"docs.new"},{"product":"Google Docs","desc":"Create a new document using Google Docs.","shortcut":"document.new"},{"product":"Google Docs","desc":"Create a new document using Google Docs.","shortcut":"documents.new"},{"product":"Google Forms","desc":"Create a new form using Google Forms.","shortcut":"form.new"},{"product":"Google Forms","desc":"Create a new form using Google Forms.","shortcut":"forms.new"},{"product":"Google Keep","desc":"Create a new note using Google Keep.","shortcut":"keep.new"},{"product":"Google Keep","desc":"Create a new note using Google Keep.","shortcut":"note.new"},{"product":"Google Keep","desc":"Create a new note using Google Keep.","shortcut":"notes.new"},{"product":"Google Meet","desc":"Launch a real-time meeting from your browser using Google Meet.","shortcut":"meet.new"},{"product":"Google Sheet","desc":"Create a new spreadsheet using Google Sheets.","shortcut":"sheets.new"},{"product":"Google Sheet","desc":"Create a new spreadsheet using Google Sheets.","shortcut":"spreadsheet.new"},{"product":"Google Sheet","desc":"Create a new spreadsheet using Google Sheets.","shortcut":"spreadsheets.new"},{"product":"Google Sites","desc":"Build and publish a website using Google Sites.","shortcut":"site.new"},{"product":"Google Sites","desc":"Build and publish a website using Google Sites.","shortcut":"sites.new"},{"product":"Google Sites","desc":"Build and publish a website using Google Sites.","shortcut":"website.new"},{"product":"Google Slides","desc":"Create an online presentation using Google Slides.","shortcut":"deck.new"},{"product":"Google Slides","desc":"Create an online presentation using Google Slides.","shortcut":"presentation.new"},{"product":"Google Slides","desc":"Create an online presentation using Google Slides.","shortcut":"slide.new"},{"product":"Google Slides","desc":"Create an online presentation using Google Slides.","shortcut":"slides.new"},{"product":"hashnode","desc":"Create a new developer blog post using hashnode.","shortcut":"hn.new"},{"product":"Higher","desc":"Create a new topic to chat, call and collaborate.","shortcut":"topic.new"},{"product":"ICQ","desc":"Chat with friends on ICQ.","shortcut":"icq.new"},{"product":"id.new","desc":"Generate test identities for testing purposes.","shortcut":"id.new"},{"product":"Ideaflow","desc":"Create a new note with Ideaflow.","shortcut":"if.new"},{"product":"InVision","desc":"Collaborate on an online whiteboard using InVision's Freehand.","shortcut":"freehand.new"},{"product":"KickResume","desc":"Create a standout resume with KickResume.","shortcut":"cv.new"},{"product":"Linear.app","desc":"FIle a new issue in Linear's project management interface.","shortcut":"linear.new"},{"product":"Liner","desc":"Create a new list on Liner.","shortcut":"list.new"},{"product":"Lucid","desc":"Use Lucidspark's online whiteboard.","shortcut":"lucidspark.new"},{"product":"Microsoft Excel","desc":"Create a spreadsheet using Excel.","shortcut":"excel.new"},{"product":"Microsoft PowerPoint","desc":"Create a new presentation using PowerPoint.","shortcut":"powerpoint.new"},{"product":"Microsoft PowerPoint","desc":"Create a new presentation using PowerPoint.","shortcut":"ppt.new"},{"product":"Microsoft PowerPoint","desc":"Create a new presentation using PowerPoint.","shortcut":"pptx.new"},{"product":"Microsoft Sway","desc":"Create beautiful designs using Microsoft Sway.","shortcut":"sway.new"},{"product":"Microsoft Word","desc":"Create a new document using Word.","shortcut":"docx.new"},{"product":"Microsoft Word","desc":"Create a new document using Word.","shortcut":"word.new"},{"product":"MindMeister","desc":"Create a new mindmap and share your ideas on MindMeister.","shortcut":"mindmap.new"},{"product":"Miro","desc":"Design a workshop using Miro.","shortcut":"workshop.new"},{"product":"Oryx","desc":"Configure your ergonomic keyboard using Oryx.","shortcut":"layout.new"},{"product":"Pipedream","desc":"Create bins and inspect events right from your browser.","shortcut":"webhook.new"},{"product":"Prezi","desc":"Design beautiful presentations using Prezi.","shortcut":"prezi.new"},{"product":"Range","desc":"Create check-ins with Range to stay connected with your team.","shortcut":"checkin.new"},{"product":"Scan.new","desc":"Scan a QR code on scan.new.","shortcut":"scan.new"},{"product":"Slido","desc":"Create a poll for your Slido meeting.","shortcut":"poll.new"},{"product":"Slido","desc":"Start a new Slido meeting.","shortcut":"slido.new"},{"product":"Sprout","desc":"Create a new note on Sprout.","shortcut":"sprout.new"},{"product":"Supermove","desc":"Move your home with Supermove.","shortcut":"move.new"},{"product":"Tanadium Pte. Ltd.","desc":"Quickly comment on any website with Tanadium.","shortcut":"comments.new"},{"product":"Tettra","desc":"Create a new page in your Tettra knowledge base.","shortcut":"page.new"},{"product":"Tettra","desc":"Create a new page in your Tettra knowledge base.","shortcut":"tettra.new"},{"product":"Tettra","desc":"Suggest new content for your Tettra knowledge base.","shortcut":"suggest.new"},{"product":"Text Editor","desc":"Quickly write a note in this online text editor.","shortcut":"text.new"},{"product":"Todoist","desc":"Create a new project plan and collaborate on tasks using Todoist.","shortcut":"todoist.new"},{"product":"Venncal","desc":"Schedule a new event.","shortcut":"venncal.new"},{"product":"Vieta","desc":"Start a new chatroom on Vieta.","shortcut":"chat.new"},{"product":"Walling","desc":"Create a new wall with Walling or all your ideas, notes, bookmarks, inspiration, and more.","shortcut":"wall.new"},{"product":"Webex","desc":"Initiate a Webex meeting.","shortcut":"letsmeet.new"},{"product":"Webex","desc":"Initiate a Webex meeting.","shortcut":"mymeet.new"},{"product":"Webex","desc":"Initiate a Webex meeting.","shortcut":"webex.new"},{"product":"WIP","desc":"Add a new task to your WIP todo list.","shortcut":"todo.new"},{"product":"Workona","desc":"Set up a new workspace to manage your Chrome tabs.","shortcut":"action.new"},{"product":"Zip Extractor","desc":"Create new zip archive to easily store and share files.","shortcut":"zip.new"},{"product":"BibGuru","desc":"Add a citation to your bibliography with BibGuru.","shortcut":"citation.new"},{"product":"Canva","desc":"Create simple lesson plans for kids using templates from Canva.","shortcut":"lessonplan.new"},{"product":"Canva","desc":"Create simple lesson plans for kids using templates from Canva.","shortcut":"lessonplans.new"},{"product":"Canva","desc":"Create a worksheet for a classroom lesson or assignment using a template from Canva.","shortcut":"worksheet.new"},{"product":"Code.in","desc":"Learn to code with real-time interactive coding sessions.","shortcut":"code.new"},{"product":"Eduflow","desc":"Design your course outline with templates from Eduflow.","shortcut":"course.new"},{"product":"Kahoot","desc":"Create an online quiz using Kahoot.","shortcut":"kahoot.new"},{"product":"Kahoot","desc":"Create an online quiz using Kahoot.","shortcut":"quiz.new"},{"product":"Project drawdown","desc":"Develop climate change solutions using Project drawdown.","shortcut":"climate.new"},{"product":"Prowise","desc":"Design classes and presentations with Prowise Presenter.","shortcut":"presenter.new"},{"product":"Quizlet","desc":"Create a new study set and test your knowledge using Quizlet.","shortcut":"quizlet.new"},{"product":"Tabletwise","desc":"Create a new online course on Tabletwise.","shortcut":"class.new"},{"product":"Teacher Centric Ltd","desc":"Create new assignments and homework for your students with TeacherCentric.","shortcut":"assign.new"},{"product":"TeacherCentric Ltd","desc":"Add a new notice on your school calendar with TeacherCentric.","shortcut":"notice.new"},{"product":"University of Maryland","desc":"Estimate tuition for the University of Maryland.","shortcut":"tuition.new"},{"product":"Bonfire","desc":"Design custom products to sell online with Bonfire.","shortcut":"fundraiser.new"},{"product":"Bonfire","desc":"Design custom products to sell online with Bonfire.","shortcut":"merch.new"},{"product":"Bonfire","desc":"Design custom products to sell online with Bonfire.","shortcut":"shirt.new"},{"product":"Bonfire","desc":"Design custom products to sell online with Bonfire.","shortcut":"shirts.new"},{"product":"Bonfire","desc":"Design custom products to sell online with Bonfire.","shortcut":"tshirts.new"},{"product":"Custom Ink","desc":"Create a custom t-shirt with your own art, text, and more with Custom Ink.","shortcut":"customink.new"},{"product":"Custom Ink","desc":"Create a custom t-shirt with your own art, text, and more with Custom Ink.","shortcut":"tshirt.new"},{"product":"eBay","desc":"Create an online shop on eBay.","shortcut":"shop.new"},{"product":"Framery","desc":"Customise and order your own Framery office Phone Booth.","shortcut":"officephonebooth.new"},{"product":"GoDigi","desc":"Create a digital catalog of your products using Godigi.","shortcut":"catalog.new"},{"product":"Grailed","desc":"Buy and sell clothing on Grailed.","shortcut":"grail.new"},{"product":"Grailed","desc":"Buy and sell clothing on Grailed.","shortcut":"grailed.new"},{"product":"ING","desc":"Apply for a personal loan with ING.","shortcut":"personalloan.new"},{"product":"McMASTER-CARR","desc":"Start a new industrial product order using McMASTER-CARR.","shortcut":"mcmaster-carr.new"},{"product":"McMASTER-CARR","desc":"Start a new industrial product order using McMASTER-CARR.","shortcut":"mcmaster.new"},{"product":"McMASTER-CARR","desc":"Start a new industrial product order using McMASTER-CARR.","shortcut":"mcmastercarr.new"},{"product":"Mercari","desc":"Sell your used stuff on Mercari.","shortcut":"mercari.new"},{"product":"MiroLite","desc":"Create and share ideas using MicroLite's whiteboard.","shortcut":"merpay.new"},{"product":"Neighbor","desc":"List your available storage space on Neighbor.","shortcut":"neighbor.new"},{"product":"Neighbor","desc":"List your available storage space on Neighbor.","shortcut":"storage.new"},{"product":"Packlane","desc":"Design custom decorated boxes for your business with Packlane.","shortcut":"box.new"},{"product":"Point101","desc":"Order framed prints of your favorite photos with Point101.","shortcut":"art.new"},{"product":"TheRealReal","desc":"Consign luxury items with TheRealReal.","shortcut":"authenticate.new"},{"product":"TheRealReal","desc":"Consign luxury items with TheRealReal.","shortcut":"consign.new"},{"product":"TheRealReal","desc":"Consign luxury items with TheRealReal.","shortcut":"resell.new"},{"product":"TheRealReal","desc":"Consign luxury items with TheRealReal.","shortcut":"sustain.new"},{"product":"Absolut Drinks","desc":"Choose your favorite drink recipes and share them with your friends.","shortcut":"drink.new"},{"product":"Airtime Media","desc":"Start a new group hangout to watch content and video chat.","shortcut":"room.new"},{"product":"AnimeDotNew","desc":"Create a list of your favorite Anime at anime.new.","shortcut":"anime.new"},{"product":"ClassCalc","desc":"Explore math using ClassCalc's cheat-free calculator app.","shortcut":"add.new"},{"product":"Compekun","desc":"Create and record a new golf competition with Compekun.","shortcut":"golf.new"},{"product":"Crossover Health","desc":"Schedule a consultation with Crossover Health.","shortcut":"care.new"},{"product":"Crossover Health","desc":"Schedule a consultation with Crossover Health.","shortcut":"crossover.new"},{"product":"Crossover Health","desc":"Schedule a consultation with Crossover Health.","shortcut":"crossoverhealth.new"},{"product":"Dashlane","desc":"Keep your online accounts secure with Dashlane's password generator.","shortcut":"dashlane.new"},{"product":"Dashlane","desc":"Keep your online accounts secure with Dashlane's password generator.","shortcut":"password.new"},{"product":"Discord","desc":"Start a new Discord community where you can hang out and chat with friends.","shortcut":"discord.new"},{"product":"eToro","desc":"Buy, sell, and trade Bitcoin on eToro.","shortcut":"bitcoin.new"},{"product":"eToro","desc":"Buy, sell, and trade Bitcoin on eToro.","shortcut":"btc.new"},{"product":"eToro","desc":"Buy, sell, and trade Ethereum on eToro.","shortcut":"eth.new"},{"product":"eToro","desc":"Buy, sell, and trade Ethereum on eToro.","shortcut":"ethereum.new"},{"product":"eToro","desc":"Buy, sell, and trade TSLA on eToro.","shortcut":"tsla.new"},{"product":"eToro","desc":"Buy, sell, and trade TWTR on eToro.","shortcut":"twtr.new"},{"product":"eToro","desc":"Buy, sell, and trade Ripple on eToro.","shortcut":"xrp.new"},{"product":"ETORO GROUP LTD","desc":"Open a free stock investing account on eToro.","shortcut":"stocks.new"},{"product":"ETORO GROUP LTD","desc":"Buy and Trade stocks on eToro.","shortcut":"trade.new"},{"product":"ETORO GROUP LTD","desc":"Buy and Trade stocks on eToro.","shortcut":"twtr.new"},{"product":"Every.org","desc":"Explore, donate, and share over one million nonprofits on Every.org.","shortcut":"give.new"},{"product":"EveryHuman","desc":"Create a unique scent based on your personality using an algorithmic perfumery.","shortcut":"perfume.new"},{"product":"FAIRTIQ","desc":"Activate your Fairtiq ticket for Swiss public transport.","shortcut":"fairtiq.new"},{"product":"FakePersonGenerator","desc":"Create a fake profile to protect your identity using FakePersonGenerator.","shortcut":"user.new"},{"product":"gotomaxx software","desc":"Generate a new invoice.","shortcut":"brief.new"},{"product":"love.new Pick-Up Lines","desc":"Get new pickup lines on love.new.","shortcut":"love.new"},{"product":"OpenTable","desc":"Make a restaurant reservation with OpenTable.","shortcut":"reservation.new"},{"product":"OpenTable","desc":"Make a restaurant reservation with OpenTable.","shortcut":"restaurant.new"},{"product":"ParkMobile","desc":"List or reserve parking spots in your nearby area.","shortcut":"park.new"},{"product":"ParkMobile","desc":"List or reserve parking spots in your nearby area.","shortcut":"parking.new"},{"product":"PulsePoint","desc":"Add your automated external defibrillator to the PulsePoint AED registry to help improve cardiac arrest survival.","shortcut":"aed.new"},{"product":"Purpl","desc":"Create and share event listings on Purpl.","shortcut":"event.new"},{"product":"Research Square","desc":"Share your research as a preprint through Research Square.","shortcut":"preprint.new"},{"product":"Smartrecipes","desc":"Add your recipe to your Smartrecipes collection.","shortcut":"recipe.new"},{"product":"sms-now","desc":"Send a SMS message to anyone in the United States.","shortcut":"sms.new"},{"product":"sms-now","desc":"Send a SMS message to anyone in the United States.","shortcut":"sms.new"},{"product":"The Human Utility, Inc.","desc":"Donate to help pay the water bill of someone at risk of having their water shut off.","shortcut":"donation.new"}];
+const shortcuts = [
+    [
+        "ar.new",
+        "Aircards",
+        "Easily create and deploy WebAR activation codes to use on your next augmented reality project."
+    ],
+    [
+        "io.new",
+        "Bit.io",
+        "Upload data to your Bit.io cloud database."
+    ],
+    [
+        "query.new",
+        "bit.io",
+        "Easily query bit.io data repositories."
+    ],
+    [
+        "pack.new",
+        "Coda",
+        "Customize your Coda docs by making your own Pack."
+    ],
+    [
+        "pen.new",
+        "CodePen",
+        "Prototype your frontend code in CodePen's online development sandbox."
+    ],
+    [
+        "vue.new",
+        "CodeSandbox",
+        "Create a new vue.js project online with CodeSandbox."
+    ],
+    [
+        "ts.new",
+        "CodeSandbox",
+        "Create a new Typescript project online with CodeSandbox."
+    ],
+    [
+        "js.new",
+        "CodeSandbox",
+        "Create a new Javascript project online with CodeSandbox."
+    ],
+    [
+        "react.new",
+        "CodeSandbox",
+        "Create a new React project online with CodeSandbox."
+    ],
+    [
+        "ng.new",
+        "CodeSandbox",
+        "Create a new Angular project online CodeSandbox."
+    ],
+    [
+        "csb.new",
+        "CodeSandbox",
+        "Create a new project online with CodeSandbox."
+    ],
+    [
+        "svelte.new",
+        "CodeSandbox",
+        "Create a new Svelte project using CodeSandbox."
+    ],
+    [
+        "nodejs.new",
+        "Codesandbox.io",
+        "Open up a sandbox for your next development project with Node.js."
+    ],
+    [
+        "snippet.new",
+        "Codespace",
+        "Create a new snippet on Codespace."
+    ],
+    [
+        "kafka.new",
+        "Confluent cluster",
+        "Design the optimal Confluence cluster for your Apache Kafka deployment."
+    ],
+    [
+        "datacatalog.new",
+        "Data World",
+        "Create a new Data Catalog file."
+    ],
+    [
+        "cassandra.new",
+        "DataStax Astra",
+        "Set up your Cassandra database on the cloud with DataStax Astra."
+    ],
+    [
+        "db.new",
+        "DataStax Astra",
+        "Set up your Cassandra database on the cloud with DataStax Astra."
+    ],
+    [
+        "graphql.new",
+        "DataStax Astra",
+        "Set up your Cassandra database on the cloud with DataStax Astra."
+    ],
+    [
+        "keyspace.new",
+        "DataStax Astra",
+        "Set up your Cassandra database on the cloud with DataStax Astra."
+    ],
+    [
+        "rest.new",
+        "DataStax Astra",
+        "Set up your Cassandra database on the cloud with DataStax Astra."
+    ],
+    [
+        "webapp.new",
+        "Dynaboard",
+        "Build a new webapp using Dynaboard."
+    ],
+    [
+        "editorx.new",
+        "Editor X",
+        "Build your website using Editor X's online tool."
+    ],
+    [
+        "age.new",
+        "Flatpack",
+        "Create a website using Flatpack's HTML builder."
+    ],
+    [
+        "flutter.new",
+        "Flutter",
+        "Prototype your app using Flutter's online editor."
+    ],
+    [
+        "auth.new",
+        "Frontegg",
+        "Design a login page for your SaaS application."
+    ],
+    [
+        "gist.new",
+        "GitHub",
+        "Open new GitHub gists."
+    ],
+    [
+        "github.new",
+        "GitHub",
+        "Open new GitHub repositories."
+    ],
+    [
+        "repo.new",
+        "GitHub",
+        "Open new GitHub repositories."
+    ],
+    [
+        "streamlit.new",
+        "GitHub",
+        "Turn your data scripts into shareable web apps within minutes on GitHub."
+    ],
+    [
+        "glitch.new",
+        "Glitch",
+        "Code full-stack apps in your browser and collaborate live."
+    ],
+    [
+        "model.new",
+        "Google",
+        "Train custom machine learning models with minimal experience and effort using Google's ML tools."
+    ],
+    [
+        "script.new",
+        "Google AppScript",
+        "Create and share new editor functions using Google App Script."
+    ],
+    [
+        "issue.new",
+        "Instantish",
+        "Create a new ticket issue and quickly share it."
+    ],
+    [
+        "ide.new",
+        "InterviewBit",
+        "Prepare for coding interview questions with InterviewBit."
+    ],
+    [
+        "ionic.new",
+        "Ionic",
+        "Building high quality, cross-platform native and web app experiences with Ionic."
+    ],
+    [
+        "apps.new",
+        "Kodular",
+        "Start building an app using Kodular's drag and drop development suite."
+    ],
+    [
+        "makerpad.new",
+        "Makerpad",
+        "Share your workflows and help users build software without coding."
+    ],
+    [
+        "nocode.new",
+        "Makerpad",
+        "Share your workflows and help users build software without coding."
+    ],
+    [
+        "mathworks.new",
+        "MathWorks",
+        "Use MATLAB and Simulink through your web browser."
+    ],
+    [
+        "matlab.new",
+        "MathWorks",
+        "Use MATLAB and Simulink through your web browser."
+    ],
+    [
+        "simulink.new",
+        "MathWorks",
+        "Use MATLAB and Simulink through your web browser."
+    ],
+    [
+        "dotnet.new",
+        "Microsoft",
+        "Test a .NET application in Microsoft's Try .NET environment."
+    ],
+    [
+        "env.new",
+        "Microsoft Visual Studio",
+        "Create a new Visual Studio codespace for your project."
+    ],
+    [
+        "vso.new",
+        "Microsoft Visual Studio",
+        "Create a new Visual Studio codespace for your project."
+    ],
+    [
+        "vsonline.new",
+        "Microsoft Visual Studio",
+        "Create a new Visual Studio codespace for your project."
+    ],
+    [
+        "wireframe.new",
+        "Miro",
+        "Build wireframes for your project using Miro."
+    ],
+    [
+        "pwa.new",
+        "Pwabbit",
+        "Code a new website using Pwabbit's simple editor."
+    ],
+    [
+        "dev.new",
+        "Railway",
+        "Create a new Railway deployment in the cloud."
+    ],
+    [
+        "repl.new",
+        "REPL",
+        "Create and complie a bash script with REPL."
+    ],
+    [
+        "api.new",
+        "RunKit",
+        "Prototype and launch your APIs using RunKit."
+    ],
+    [
+        "playground.new",
+        "RunKit",
+        "Prototype and launch your APIs using RunKit."
+    ],
+    [
+        "folder.new",
+        "Runkit",
+        "Create a new notebook for your API on RunKit."
+    ],
+    [
+        "css.new",
+        "Scrimba",
+        "Create a new HTML/CSS/JS page in Scrimba."
+    ],
+    [
+        "html.new",
+        "Scrimba",
+        "Create a new HTML/CSS/JS page in Scrimba."
+    ],
+    [
+        "scrimba.new",
+        "Scrimba",
+        "Create a new HTML/CSS/JS page in Scrimba."
+    ],
+    [
+        "typescript.new",
+        "Scrimba",
+        "Create an HTML and Typescript page with Scrimba."
+    ],
+    [
+        "sql.new",
+        "SeekWell",
+        "Write SQL queries for your data in other applications."
+    ],
+    [
+        "jamstack.new",
+        "Stackbit",
+        "Create a new Jamstack site."
+    ],
+    [
+        "next.new",
+        "StackBlitz",
+        "Build and deploy scalable apps using Node.js."
+    ],
+    [
+        "node.new%20vite.new",
+        "StackBlitz",
+        "Build and deploy scalable apps using Node.js."
+    ],
+    [
+        "stack.new",
+        "Stackery",
+        "Audit project templates and visualize results using Stackery."
+    ],
+    [
+        "tailwind.new",
+        "Tailwindcss.com",
+        "Build responsive designs right in your browser with Tailwind."
+    ],
+    [
+        "saas.new",
+        "Tesserai",
+        "Charge users who use your APIs with Tesserai."
+    ],
+    [
+        "deploy.new",
+        "Vercel",
+        "Import your front-end projects to Vercel for preview and deployment."
+    ],
+    [
+        "zeit.new",
+        "Vercel",
+        "Import your front-end projects to Vercel for preview and deployment."
+    ],
+    [
+        "module.new",
+        "Vercel",
+        "Instantly deploy your Next.js site to a public URL with Vercel."
+    ],
+    [
+        "write.new",
+        "Zoho",
+        "Start a new document using Zoho."
+    ],
+    [
+        "sign.new",
+        "Adobe",
+        "Fill and sign PDF documents and forms with Adobe Acrobat."
+    ],
+    [
+        "compresspdf.new",
+        "Adobe",
+        "Compress PDF documents with simple drag and drop with Adobe Acrobat."
+    ],
+    [
+        "mergepdf.new",
+        "Adobe",
+        "Combine PDFs into one file with Adobe."
+    ],
+    [
+        "pdftoword.new",
+        "Adobe",
+        "Convert PDFs to Word documents with Adobe."
+    ],
+    [
+        "rotatepdf.new",
+        "Adobe",
+        "Rotate your PDF pages using Adobe."
+    ],
+    [
+        "protectpdf.new",
+        "Adobe Inc.",
+        "Secure your PDFs with Adobe."
+    ],
+    [
+        "ad.new",
+        "AdPlugg",
+        "Create a fully managed ad with impression and click tracking with AdPlugg."
+    ],
+    [
+        "track.new",
+        "Aftership",
+        "Track your shipments across various couriers."
+    ],
+    [
+        "smarthome.new",
+        "Alarm.com",
+        "Equip your home with smart security with Alarm.com."
+    ],
+    [
+        "alt.new",
+        "Alt",
+        "Invest in alternative assets with Alt."
+    ],
+    [
+        "onlyalt.new",
+        "Alt",
+        "Invest in alternative assets with Alt."
+    ],
+    [
+        "vault.new",
+        "Alt",
+        "Trade alternative asset starting with trading cards using Alt app."
+    ],
+    [
+        "erp.new",
+        "Altisuite",
+        "Create customer information for one e-commerce platform using Altisuite."
+    ],
+    [
+        "crm.new",
+        "Altisuite",
+        "Use Altisuite's CRM."
+    ],
+    [
+        "afclaim.new",
+        "American Fidelity",
+        "File a claim towards your American Fidelity insurance."
+    ],
+    [
+        "afreimburse.new",
+        "American Fidelity",
+        "Submit a reimbursement request from your American Fidelity account."
+    ],
+    [
+        "avalon.new",
+        "Avalon Technologies",
+        "Create a deposit for investment with Avalon Technologies."
+    ],
+    [
+        "branch.new",
+        "Avo",
+        "Track your data with Avo."
+    ],
+    [
+        "tracking.new",
+        "Avo",
+        "Track your data with Avo."
+    ],
+    [
+        "hq.new",
+        "Axios HQ logo",
+        "Creates newsletter/edition using hq.new workspace."
+    ],
+    [
+        "businessloan.new",
+        "Bankwest",
+        "Get started on a business loan application with Bankwest."
+    ],
+    [
+        "bill.new",
+        "bill.com",
+        "Create and send bills to your clients using bill.com."
+    ],
+    [
+        "inv.new",
+        "bill.com",
+        "Create an invoice for your business using bill.com."
+    ],
+    [
+        "inbox.new",
+        "Bill.com",
+        "Easily pay international and domestic vendors the same way with Bill.com."
+    ],
+    [
+        "connect.new",
+        "Bill.com",
+        "Create and pay bills, send invoices on Bill.com"
+    ],
+    [
+        "buffer.new",
+        "Buffer",
+        "Schedule and manage your social media posts."
+    ],
+    [
+        "burner.new",
+        "Burner",
+        "Create a second phone number with Burner."
+    ],
+    [
+        "number.new",
+        "Burner",
+        "Create a second phone number with Burner."
+    ],
+    [
+        "phonenumber.new",
+        "Burner",
+        "Create a second phone number with Burner."
+    ],
+    [
+        "bpmn.new",
+        "Business Modeler Preview",
+        "Create BPMN and DMN files online for your business."
+    ],
+    [
+        "dmn.new",
+        "Business Modeler Preview",
+        "Create BPMN and DMN files online for your business."
+    ],
+    [
+        "newsletter.new",
+        "Buttondown",
+        "Create a new email newsletter using Buttondown."
+    ],
+    [
+        "menu.new",
+        "Canva",
+        "Design an appetizing menu using customizable templates from Canva."
+    ],
+    [
+        "resumes.new",
+        "Canva",
+        "Create a professional-looking resume using templates from Canva."
+    ],
+    [
+        "designs.new",
+        "Canva",
+        "Create a new design using beautiful, customizable templates from Canva."
+    ],
+    [
+        "flyer.new",
+        "Canva",
+        "Create a flyer using beautiful, customizable templates from Canva."
+    ],
+    [
+        "invitations.new",
+        "Canva",
+        "Create an invitation using beautiful, customizable templates from Canva."
+    ],
+    [
+        "finance.new",
+        "Capchase",
+        "Apply for a business loan using finance.new."
+    ],
+    [
+        "draw.new",
+        "Capchase",
+        "Quickly withdraw money from your bank account using draw.new."
+    ],
+    [
+        "landingpage.new",
+        "ConvertKit",
+        "Design a landing page for your project using ConvertKit."
+    ],
+    [
+        "security.new",
+        "Core",
+        "Allows users to easily manage their smart security system at home."
+    ],
+    [
+        "dao.new",
+        "DAO",
+        "Create your own NFT DAO."
+    ],
+    [
+        "graph.new",
+        "Datadog",
+        "Create a new notebook for live collaboration on Datadog."
+    ],
+    [
+        "cassandra.new",
+        "DataStax",
+        "Get started on building a database using DataStax."
+    ],
+    [
+        "rest.new",
+        "DataStax, Inc",
+        "Create a database with DataStax."
+    ],
+    [
+        "creditcard.new",
+        "Discover Card",
+        "Design a new credit card with Discover Card."
+    ],
+    [
+        "notary.new",
+        "DocuSign, Inc.",
+        "Prepare, manage, and sign agreements using DocuSign."
+    ],
+    [
+        "agreements.new",
+        "DocuSign, Inc.",
+        "Prepare, manage, and sign agreements using DocuSign."
+    ],
+    [
+        "notarize.new",
+        "DocuSign, Inc.",
+        "Notarize documents with DocuSign."
+    ],
+    [
+        "developer.new",
+        "DocuSign, Inc.",
+        "E-sign documents using DocuSign."
+    ],
+    [
+        "esignature.new",
+        "DocuSign, Inc.",
+        "E-sign documents using DocuSign."
+    ],
+    [
+        "signature.new",
+        "DocuSign, Inc.",
+        "E-sign documents using DocuSign."
+    ],
+    [
+        "duda.new",
+        "Duda",
+        "Create your website and manage your business online."
+    ],
+    [
+        "emix.new",
+        "e.Mix",
+        "Track your shipments using mantranet"
+    ],
+    [
+        "sell.new",
+        "eBay",
+        "Sell products on eBay."
+    ],
+    [
+        "cdn.new",
+        "Edge",
+        "Create your first Edge Content Delivery deployment."
+    ],
+    [
+        "websites.new",
+        "Emaze",
+        "Create a website using Emaze."
+    ],
+    [
+        "copytrader.new",
+        "eToro Group LTD",
+        "Purchase cryptocurrency eToro."
+    ],
+    [
+        "etoro.new",
+        "eToro Group LTD",
+        "Buy, sell, and trade Ripple on eToro."
+    ],
+    [
+        "vpn.new",
+        "eVenture Ltd",
+        "Use a proxy server without having to connect to a VPN with eVenture."
+    ],
+    [
+        "geophy.new",
+        "EVRA",
+        "Get helpful property and real estate information using EVRA."
+    ],
+    [
+        "prd.new",
+        "Fable",
+        "Create a new PRD using Fable."
+    ],
+    [
+        "fellow.new",
+        "Fellow",
+        "Create your own event using fellow.new"
+    ],
+    [
+        "fp.new",
+        "Fiberplane",
+        "Create an online notebook using Fiberplane."
+    ],
+    [
+        "job.new",
+        "Find Jobs",
+        "Post a new job listing with Find Jobs."
+    ],
+    [
+        "segment.new",
+        "Flywheel Software",
+        "Segment your business' customers with Flywheel Software."
+    ],
+    [
+        "camping.new",
+        "Freeway Camper",
+        "Book your next camping adventure with Freeway Camper."
+    ],
+    [
+        "codespaces.new",
+        "GitHub, Inc.",
+        "Create a new code space on GitHub."
+    ],
+    [
+        "websitebuilder.new",
+        "GoDaddy",
+        "Build a website for your business with GoDaddy."
+    ],
+    [
+        "securityreview.new",
+        "Google LLC",
+        "Kick off Google's security review process for your project."
+    ],
+    [
+        "letter.new",
+        "gotomaxx software GmbH",
+        "Create a new invoice using gotomaxx."
+    ],
+    [
+        "pdfmailer.new",
+        "gotomaxx software GmbH",
+        "Create a new invoice using gotomaxx."
+    ],
+    [
+        "xrechnung.new",
+        "gotomaxx software GmbH",
+        "Create a new invoice using gotomaxx."
+    ],
+    [
+        "e-invoice.new",
+        "gotomaxx software GmbH",
+        "Create an e-invoice using gotomaxx Software."
+    ],
+    [
+        "harbor.new",
+        "Harbour Enterprises, Inc.",
+        "Upload your contract to Harbour."
+    ],
+    [
+        "agree.new",
+        "Harbour Enterprises, Inc.",
+        "Upload your contract to Harbour."
+    ],
+    [
+        "harbour.new",
+        "Harbour Enterprises, Inc.",
+        "Manage your contracts with Harbour."
+    ],
+    [
+        "funnel.new",
+        "Heyflow",
+        "Create an interactive flow using Heyflow."
+    ],
+    [
+        "trip.new",
+        "Hipherd",
+        "Create a travel inspiration board using Hipherd."
+    ],
+    [
+        "emailsignature.new",
+        "HoneyBook",
+        "Create a professional email signature in 30 seconds HoneyBook."
+    ],
+    [
+        "host.new",
+        "Hosterion",
+        "Manage your web hosting with Hosterion."
+    ],
+    [
+        "hosting.new",
+        "Hosterion",
+        "Manage your web hosting with Hosterion."
+    ],
+    [
+        "webhosting.new",
+        "Hosttech",
+        "Get webhosting with hosttech."
+    ],
+    [
+        "job.new",
+        "HRBlaster",
+        "Post your startup job on Startup Jobs."
+    ],
+    [
+        "profile.new",
+        "Indeed, Inc",
+        "Create your online resume with Indeed."
+    ],
+    [
+        "ip.new",
+        "Inspirational People",
+        "Submit content to InspirationalPeople.org using their markdown editor."
+    ],
+    [
+        "edo.new",
+        "Internet Bank",
+        "Checking of counterparty using Tochka"
+    ],
+    [
+        "recruit.new",
+        "JobVector",
+        "Find a new job with JobVector."
+    ],
+    [
+        "jobvector.new",
+        "Jobvector GmbH",
+        "Find your next job opportunity with Jobvector."
+    ],
+    [
+        "career.new",
+        "Jobvector GmbH",
+        "Find your next career opportunity with Jobvector."
+    ],
+    [
+        "digiposte.new",
+        "La Poste",
+        "Upload documents to your Digiposte account."
+    ],
+    [
+        "lnk.new",
+        "LNK",
+        "Create a lnk.bio page to manage all your links and social media."
+    ],
+    [
+        "insure.new",
+        "Marble",
+        "Choose your insurance policy on Marble."
+    ],
+    [
+        "marble.new",
+        "Marble Pay Inc.",
+        "Create and add insurance policy using MarblePay."
+    ],
+    [
+        "points.new",
+        "Marble Pay Inc.",
+        "Centralizes all your insurance policies in MarblePay."
+    ],
+    [
+        "mibo.new",
+        "Mibo",
+        "Create a team-bonding meeting with Mibo."
+    ],
+    [
+        "teams.new",
+        "Microsoft Teams",
+        "Chat with your team using Microsoft Teams."
+    ],
+    [
+        "server.new",
+        "Mobilistics",
+        "Set up a custom server for your business or project."
+    ],
+    [
+        "vps.new",
+        "ModernSolutions",
+        "Configure your VPS using Modern Solutions."
+    ],
+    [
+        "my.new",
+        "My",
+        "Create shortened URLs for common tasks with my.new."
+    ],
+    [
+        "coach.new",
+        "MyCoachReady",
+        "Get personal online coaching with MyCoachReady."
+    ],
+    [
+        "businesscard.new",
+        "Namecheap",
+        "Design personalized business cards with Namecheap."
+    ],
+    [
+        "review.new",
+        "Nicejob",
+        "Review a local business with NiceJob."
+    ],
+    [
+        "nova.new",
+        "novahq.com",
+        "Create a new business transaction with Nova."
+    ],
+    [
+        "listing.new",
+        "OneShp",
+        "Create a new listing on OneShop to quickly sell items."
+    ],
+    [
+        "expense.new",
+        "Open",
+        "Add an expense to your Open account."
+    ],
+    [
+        "gst.new",
+        "Open",
+        "Create a bill in your Open account."
+    ],
+    [
+        "banking.new",
+        "Open",
+        "Create a new banking account for your business, using Open."
+    ],
+    [
+        "payout.new",
+        "Open",
+        "Transfer payments and funds using Open."
+    ],
+    [
+        "payroll.new",
+        "Open",
+        "Run payroll using Open."
+    ],
+    [
+        "collect.new",
+        "Open",
+        "Collect payments using Open."
+    ],
+    [
+        "loan.new",
+        "Open",
+        "Apply for a loan using Open."
+    ],
+    [
+        "open.new",
+        "Open",
+        "Open an online banking account with Open."
+    ],
+    [
+        "accounting.new",
+        "Open",
+        "Manage your accounting with Open."
+    ],
+    [
+        "absence.new",
+        "Personio GmbH",
+        "Track employee absence using Personio."
+    ],
+    [
+        "candidate.new",
+        "Personio GmbH",
+        "Track your candidate pipeline using Personio."
+    ],
+    [
+        "absence.new",
+        "Personio GmbH",
+        "Track employee absences using Peronio."
+    ],
+    [
+        "pitch.new",
+        "Pitch Software GmbH",
+        "Collaborate on presentations using Pitch Software."
+    ],
+    [
+        "pix.new",
+        "Pix",
+        "Receive and manage payments with Pix."
+    ],
+    [
+        "vis.new",
+        "Polymer",
+        "Add file or create app using VIS system"
+    ],
+    [
+        "csv.new",
+        "Polymer",
+        "Converts CSV file into interactive data."
+    ],
+    [
+        "xls.new",
+        "Polymer",
+        "Turn your XLS into an interactive data app using Polymer."
+    ],
+    [
+        "ignition.new",
+        "Practice",
+        "Create and send online proposal for your business using Ignition."
+    ],
+    [
+        "okr.new",
+        "Profit.co",
+        "Create new objectives and key results for your business."
+    ],
+    [
+        "button.new",
+        "Razorpay",
+        "Receive quick payments with a button from Razorpay."
+    ],
+    [
+        "pl.new",
+        "Razorpay",
+        "Create a new payment link with Razorpay."
+    ],
+    [
+        "upi.new",
+        "Razorpay",
+        "Allow others to make payments using Razorpay."
+    ],
+    [
+        "recurring.new",
+        "Razorpay",
+        "Create a subscription plan using Razorpay."
+    ],
+    [
+        "payouts.new",
+        "RazorpayX",
+        "Create and send a payout using RazorpayX."
+    ],
+    [
+        "re.new",
+        "Re:new",
+        "Generate friendlier email responses with Re:new."
+    ],
+    [
+        "scorecard.new",
+        "Red Hat Inc",
+        "Generate scorecards online for your business with KIE Sandbox."
+    ],
+    [
+        "pmml.new",
+        "Red Hat Inc",
+        "Create PMML files for your business using Red Hat."
+    ],
+    [
+        "rem.new",
+        "Remnote",
+        "Create an online document with Remnote."
+    ],
+    [
+        "me.new",
+        "Ringpin",
+        "Create a mobile optimized landing page with Ringpin."
+    ],
+    [
+        "me.new",
+        "Ringpin",
+        "Create a mobile optimized landing page with Ringpin"
+    ],
+    [
+        "space.new",
+        "Rock",
+        "Collaborate in a new workspace with Rock."
+    ],
+    [
+        "charts.new",
+        "Sanbase",
+        "Creating charts for online crypto analysis."
+    ],
+    [
+        "clar.new",
+        "Sandbox",
+        "Create and deploy a new smart contract to the Stacks blockchain."
+    ],
+    [
+        "contact.new",
+        "ScanBuddy.ai",
+        "Create contacts by scanning your business cards."
+    ],
+    [
+        "leads.new",
+        "ScanBuddy.ai",
+        "Create contacts by scanning your business cards."
+    ],
+    [
+        "cdp.new",
+        "Segment",
+        "Create a new workspace on Segment's customer data platform."
+    ],
+    [
+        "shipment.new",
+        "Shipmondo",
+        "Create and track shipments across carriers using Shipmondo."
+    ],
+    [
+        "shopify.new",
+        "Shopify",
+        "Start a new online shop on Shopify."
+    ],
+    [
+        "businessname.new",
+        "Shopify",
+        "Designate your business name on Shopify."
+    ],
+    [
+        "start.new",
+        "Shopify Compass",
+        "Start learning from a list of global entrepreneurs with Shopify Compass."
+    ],
+    [
+        "store.new",
+        "Shopify Inc.",
+        "Create an online store on Shopify."
+    ],
+    [
+        "business.new",
+        "Shopify Inc.",
+        "Create an online business using Shopify."
+    ],
+    [
+        "onlinestore.new",
+        "Shopify Inc.",
+        "Create an online store using Shopify."
+    ],
+    [
+        "inc.new",
+        "Slack",
+        "Declare, manage and communicate incidents directly in Slack."
+    ],
+    [
+        "agreement.new",
+        "Sopimustieto",
+        "Create business agreements using common templates."
+    ],
+    [
+        "cryptojobs.new",
+        "Soul Machine Pvt. Ltd",
+        "Find a job within the crypto industry using Crypto Jobs."
+    ],
+    [
+        "flight.new",
+        "Star Alliance Services GmbH",
+        "Search available flights with Star Alliance."
+    ],
+    [
+        "flights.new",
+        "Star Alliance Services GmbH",
+        "Search available flights with Star Alliance."
+    ],
+    [
+        "invoice.new",
+        "Stripe",
+        "Create an invoice for your business using Stripe."
+    ],
+    [
+        "invoices.new",
+        "Stripe",
+        "Create an invoice for your business using Stripe."
+    ],
+    [
+        "payment.new",
+        "Stripe",
+        "Send and accept payments using Stripe."
+    ],
+    [
+        "payments.new",
+        "Stripe",
+        "Send and accept payments using Stripe."
+    ],
+    [
+        "product.new",
+        "Stripe",
+        "Add a new offering to your Stripe product catalog."
+    ],
+    [
+        "subscription.new",
+        "Stripe",
+        "Create new subscription accounts for your customers using Stripe."
+    ],
+    [
+        "subscriptions.new",
+        "Stripe",
+        "Create new subscription accounts for your customers using Stripe."
+    ],
+    [
+        "money.new",
+        "Stripe",
+        "Send and accept payments using Stripe."
+    ],
+    [
+        "deposit.new",
+        "Stripe Inc.",
+        "Receive and transfer payments with Stripe."
+    ],
+    [
+        "paymentlinks.new",
+        "Stripe, Inc.",
+        "Create payment links using Stripe."
+    ],
+    [
+        "func.new",
+        "Suborbital",
+        "Deploy serverless functions for your developer project using Suborbital."
+    ],
+    [
+        "surveymonkey.new",
+        "SurveyMonkey",
+        "Create a new survey using SurveyMonkey."
+    ],
+    [
+        "survey.new",
+        "SurveyMonkey",
+        "Create on-brand feedback surveys in minutes with SurveyMonkey."
+    ],
+    [
+        "surveymonkey.new",
+        "SurveyMonkey",
+        "Create on-brand feedback surveys in minutes with SurveyMonkey."
+    ],
+    [
+        "surveymonkey.new",
+        "SurveyMonkey",
+        "Create a new survey using SurveyMonkey."
+    ],
+    [
+        "field.new",
+        "Syngenta",
+        "Allow user to create fields online mapping"
+    ],
+    [
+        "fax.new",
+        "Topaz",
+        "Send a fax using Topaz."
+    ],
+    [
+        "tochka.new",
+        "Toyka",
+        "Create and payment online using Tochka."
+    ],
+    [
+        "workout.new",
+        "Trainstation Inc",
+        "Create a new workout on Trainstation."
+    ],
+    [
+        "trm.new",
+        "TRM labs",
+        "Create a new Graph for crypto analysis using TRM labs."
+    ],
+    [
+        "car.new",
+        "UENI",
+        "Build a website for your business with UENI."
+    ],
+    [
+        "shopping.new",
+        "UENI",
+        "Build a shopping website for your business using UENI."
+    ],
+    [
+        "online.new",
+        "UENI",
+        "Build a website for your business using UENI."
+    ],
+    [
+        "local.new",
+        "UENI",
+        "Build a website for your business using UENI."
+    ],
+    [
+        "ghs.new",
+        "UL LLC",
+        "Build an OSHA SDS document with UL's builder."
+    ],
+    [
+        "sds.new",
+        "UL LLC",
+        "Build an OSHA SDS document with UL's builder."
+    ],
+    [
+        "usertest.new",
+        "Userlytics",
+        "Design and launch a user test with Userlytics."
+    ],
+    [
+        "fund.new",
+        "Vauban",
+        "Design your investment fund using Vauban."
+    ],
+    [
+        "vibe.new",
+        "Vibe.us",
+        "Collaborate visually with your team using Vibe's smartboard."
+    ],
+    [
+        "vista.new",
+        "Vistaprint",
+        "Design and print business cards using Vistaprint."
+    ],
+    [
+        "wix.new",
+        "Wix",
+        "Build a new website using Wix."
+    ],
+    [
+        "proof.new",
+        "Wrike, Inc.",
+        "Upload files to the cloud using Wrike."
+    ],
+    [
+        "schedule.new",
+        "x.ai",
+        "Create a calendar event online using Magical."
+    ],
+    [
+        "ship.new",
+        "XPO Logistics, Inc",
+        "Manage shipping logistics with XPO Logistics."
+    ],
+    [
+        "yac.new",
+        "Yac Media Inc.",
+        "Start a group discussion using voice messages with Yac."
+    ],
+    [
+        "hire.new",
+        "ZipRecruiter",
+        "Create a job posting with ZipRecruiter."
+    ],
+    [
+        "hires.new",
+        "ZipRecruiter",
+        "Create a job posting with ZipRecruiter."
+    ],
+    [
+        "projects.new",
+        "Zoho",
+        "Create new Manage Engine projects."
+    ],
+    [
+        "change.new",
+        "Zoho",
+        "E-sign business documents using Zoho."
+    ],
+    [
+        "esign.new",
+        "Zoho",
+        "E-sign business documents using Zoho."
+    ],
+    [
+        "purchase.new",
+        "Zoho",
+        "E-sign business documents using Zoho."
+    ],
+    [
+        "record.new",
+        "Zoho",
+        "E-sign business documents using Zoho."
+    ],
+    [
+        "asset.new",
+        "Zoho Corporation Private Limited",
+        "Share and e-sign documents using Zoho."
+    ],
+    [
+        "create.new",
+        "Adobe",
+        "Design beautiful social media posts and more with Adobe Spark."
+    ],
+    [
+        "spark.new",
+        "Adobe",
+        "Design beautiful social media posts and more with Adobe Spark."
+    ],
+    [
+        "stories.new",
+        "Adobe",
+        "Design beautiful social media posts and more with Adobe Spark."
+    ],
+    [
+        "jpgtopdf.new",
+        "Adobe",
+        "Convert JPG images to PDF with Adobe Acrobat."
+    ],
+    [
+        "logo.new",
+        "Adobe",
+        "Create a new logo for your business with Adobe Spark."
+    ],
+    [
+        "convertpdf.new",
+        "Adobe",
+        "Drag and drop a Microsoft Word, Excel, PowerPoint, or image file to convert to PDF."
+    ],
+    [
+        "pdf.new",
+        "Adobe",
+        "Drag and drop a Microsoft Word, Excel, PowerPoint, or image file to convert to PDF."
+    ],
+    [
+        "wordtopdf.new",
+        "Adobe",
+        "Convert Microsoft Word documents to PDF."
+    ],
+    [
+        "photo.new",
+        "Adobe",
+        "Edit an image using Adobe Photoshop online."
+    ],
+    [
+        "photoshop.new",
+        "Adobe",
+        "Edit an image using Adobe Photoshop online."
+    ],
+    [
+        "acrobat.new",
+        "Adobe Inc.",
+        "Work with PDFs in your browser using Adobe Acrobat online services."
+    ],
+    [
+        "express.new",
+        "Adobe Inc.",
+        "Design beautiful social media posts and more with Adobe Spark."
+    ],
+    [
+        "pdftojpg.new",
+        "Adobe Inc.",
+        "Convert your PDFs to JPGs with Adobe."
+    ],
+    [
+        "alarm.new",
+        "Alarm.com Inc",
+        "Set an alarm."
+    ],
+    [
+        "episode.new",
+        "Anchor",
+        "Record a new episode for your podcast using Anchor by Spotify."
+    ],
+    [
+        "podcast.new",
+        "Anchor",
+        "Record a new episode for your podcast using Anchor by Spotify."
+    ],
+    [
+        "caption.new",
+        "Api.video",
+        "Upload videos of any size to api.video to get a shareable link for streaming."
+    ],
+    [
+        "ingest.new",
+        "Api.video",
+        "Upload videos of any size to api.video to get a shareable link for streaming."
+    ],
+    [
+        "mp4.new",
+        "Api.video",
+        "Convert videos of any size to mp4 files using api.video."
+    ],
+    [
+        "hls.new",
+        "api.video",
+        "Upload videos of any size to api.video to get a shareable link for HTTP live streaming (HLS)."
+    ],
+    [
+        "embed.new",
+        "api.video",
+        "Upload videos of any size to api.video to get an embeddable iframe."
+    ],
+    [
+        "building.new",
+        "Archilogic",
+        "Design a building floorplan using Archilogic."
+    ],
+    [
+        "interiorspace.new",
+        "Archilogic",
+        "Design an interior floorplan using Archilogic."
+    ],
+    [
+        "post.new",
+        "Automattic",
+        "Create a new blog post on your Wordpress blog."
+    ],
+    [
+        "blog.new",
+        "Automattic",
+        "Create a new blog on wordpress.com."
+    ],
+    [
+        "metric.new",
+        "Avo",
+        "Add and create metric using avo app."
+    ],
+    [
+        "befunky.new",
+        "BeFunky",
+        "Quickly edit, filter, and enhance your photos with BeFunky."
+    ],
+    [
+        "collage.new",
+        "BeFunky",
+        "Arrange multiple photos into a ready-to-share collage with BeFunky."
+    ],
+    [
+        "canva.new",
+        "Canva",
+        "Create a new Canva design with your team."
+    ],
+    [
+        "design.new",
+        "Canva",
+        "Create a new Canva design with your team."
+    ],
+    [
+        "poster.new",
+        "Canva",
+        "Create a new Canva poster with your team."
+    ],
+    [
+        "brochure.new",
+        "Canva",
+        "Create a beautiful brochure using Canva's customizable brochure templates."
+    ],
+    [
+        "brochures.new",
+        "Canva",
+        "Create a beautiful brochure using Canva's customizable brochure templates."
+    ],
+    [
+        "businesscards.new",
+        "Canva",
+        "Create professional-looking business cards using Canva's customizable templates."
+    ],
+    [
+        "cards.new",
+        "Canva",
+        "Create a card for any occasion using Canva's customizable card templates."
+    ],
+    [
+        "socialpost.new",
+        "Canva",
+        "Design your next social media post using templates from Canva."
+    ],
+    [
+        "mug.new",
+        "Canva",
+        "Design a mug using customizable templates from Canva."
+    ],
+    [
+        "photocollage.new",
+        "Canva",
+        "Create a mood board or any type of photo collage using templates from Canva."
+    ],
+    [
+        "postcard.new",
+        "Canva",
+        "Design a post card using one of Canva's many templates."
+    ],
+    [
+        "postcards.new",
+        "Canva",
+        "Design a post card using one of Canva's many templates."
+    ],
+    [
+        "posters.new",
+        "Canva",
+        "Design a poster using one of Canva's many templates."
+    ],
+    [
+        "prints.new",
+        "Canva",
+        "Create a flyer using customizable templates from Canva."
+    ],
+    [
+        "social.new",
+        "Canva",
+        "Design a social media post using templates from Canva."
+    ],
+    [
+        "socialmedia.new",
+        "Canva",
+        "Design a social media post using templates from Canva."
+    ],
+    [
+        "wallpaper.new",
+        "Canva",
+        "Design your own wallpaper using customizable templates from Canva."
+    ],
+    [
+        "webpage.new",
+        "Canva",
+        "Design a webpage using templates from Canva."
+    ],
+    [
+        "wedding.new",
+        "Canva",
+        "Design your wedding invitation using one of Canva's many templates."
+    ],
+    [
+        "yearbook.new",
+        "Canva",
+        "Create a yearbook using a beautiful template from Canva."
+    ],
+    [
+        "decks.new",
+        "Canva",
+        "Create online presentations using templates from Canva."
+    ],
+    [
+        "emails.new",
+        "Canva",
+        "Create HTML emails using templates from Canva."
+    ],
+    [
+        "infographic.new",
+        "Canva",
+        "Create an infographic using templates from Canva."
+    ],
+    [
+        "invitation.new",
+        "Canva",
+        "Create an invitation using templates from Canva."
+    ],
+    [
+        "label.new",
+        "Canva",
+        "Create labels using templates from Canva."
+    ],
+    [
+        "flyers.new",
+        "Canva",
+        "Create flyers using templates from Canva."
+    ],
+    [
+        "sticker.new",
+        "Cloudfront",
+        "Create and design stickers using Cloudfront."
+    ],
+    [
+        "stickers.new",
+        "Cloudfront",
+        "Create and design stickers using Cloudfront."
+    ],
+    [
+        "creative.new",
+        "Confect",
+        "Design a new product feed with Confect."
+    ],
+    [
+        "content.new",
+        "Confect",
+        "Create and customize your design for your product with Confect."
+    ],
+    [
+        "contract.new",
+        "Contractbook",
+        "Create a contract using helpful templates from Contractbook."
+    ],
+    [
+        "game.new",
+        "ControlZee",
+        "Launch a new dot big bang game."
+    ],
+    [
+        "copy.new",
+        "CopyAI",
+        "Generate marketing copy in seconds using CopyAI."
+    ],
+    [
+        "creatives.new",
+        "Creative Hub",
+        "Create and store files for your creative projects using Creative Hub."
+    ],
+    [
+        "developers.new",
+        "DocuSign, Inc.",
+        "Upload and process document using Docusign"
+    ],
+    [
+        "integrate.new",
+        "DocuSign, Inc.",
+        "Upload and process document using Docusign"
+    ],
+    [
+        "integrations.new",
+        "DocuSign, Inc.",
+        "Upload and process document using Docusign"
+    ],
+    [
+        "analyze.new",
+        "DocuSign, Inc.",
+        "Upload and process document using Docusign"
+    ],
+    [
+        "template.new",
+        "DocuSign, Inc.",
+        "Upload and process document using Docusign."
+    ],
+    [
+        "slidedeck.new",
+        "Dropdeck",
+        "Create an online presentation using Dropdeck."
+    ],
+    [
+        "ecard.new",
+        "Emaze",
+        "Create an e-card using Emaze."
+    ],
+    [
+        "emaze.new",
+        "Emaze",
+        "Create an online presentation using Emaze."
+    ],
+    [
+        "photos.new",
+        "Emaze",
+        "Touch up photos online using Emaze's image editing tools."
+    ],
+    [
+        "facet.new",
+        "Facet",
+        "Edit images using Facet's smart editor."
+    ],
+    [
+        "favicon.new",
+        "Favicon",
+        "Generate a favicon for your website."
+    ],
+    [
+        "figma.new",
+        "Figma",
+        "Design and prototype using Figma's collaborative interface."
+    ],
+    [
+        "figjam.new",
+        "Figma",
+        "Design and prototype using Figma's collaborative interface."
+    ],
+    [
+        "file.new",
+        "File.new",
+        "Write a quick note and share it with your friends."
+    ],
+    [
+        "score.new",
+        "flat.io",
+        "Write music online with this collaborative score editor."
+    ],
+    [
+        "flipbook.new",
+        "FlippingBook",
+        "Convert PDFs into digital flipbooks you can share."
+    ],
+    [
+        "flip.new",
+        "Flipsnack",
+        "Create an interactive online flipbook for your brand using Flipsnack."
+    ],
+    [
+        "flipsnack.new",
+        "Flipsnack",
+        "Create an interactive online flipbook for your brand using Flipsnack."
+    ],
+    [
+        "publication.new",
+        "FlowPaper",
+        "Convert PDFs into interactive publications."
+    ],
+    [
+        "glide.new",
+        "Glide",
+        "Create apps and websites without using code, with Glide."
+    ],
+    [
+        "jam.new",
+        "Google",
+        "Start a new Jamboard with Google."
+    ],
+    [
+        "tables.new",
+        "Google",
+        "Track your work and projects using Tables."
+    ],
+    [
+        "drawing.new",
+        "Google LLC",
+        "Create a new drawing using Google Drawings."
+    ],
+    [
+        "drawings.new",
+        "Google LLC",
+        "Create a new drawing using Google Drawings."
+    ],
+    [
+        "license.new",
+        "Harbour",
+        "License content with Creative Commons."
+    ],
+    [
+        "logos.new",
+        "Hatchful",
+        "Create a custom logo in seconds with Hatchful."
+    ],
+    [
+        "entry.new",
+        "Hatena",
+        "Post to your blog using Hatena."
+    ],
+    [
+        "travel.new",
+        "hipherd",
+        "Build a travel inspiration board with hipherd."
+    ],
+    [
+        "collaborate.new",
+        "Hippo Video",
+        "Record or upload a new video."
+    ],
+    [
+        "videos.new",
+        "Hippo Video",
+        "Create a personalized video using Hippo Video."
+    ],
+    [
+        "image.new",
+        "Image Editor",
+        "Edit images and photos online with Image Editor."
+    ],
+    [
+        "policy.new",
+        "InfluenceKit, Inc.",
+        "Create a new policy report using InfluenceKit."
+    ],
+    [
+        "knit.new%20wear.new",
+        "Kniterate",
+        "Create a custom design for your next knitwear project."
+    ],
+    [
+        "lucidchart.new",
+        "Lucid",
+        "Create diagrams and flow charts using Lucid."
+    ],
+    [
+        "lucidscale.new",
+        "Lucid",
+        "Get web hosting with Lucid."
+    ],
+    [
+        "luma.new",
+        "Luma",
+        "Create an event page for your Zoom event with Luma."
+    ],
+    [
+        "webstory.new",
+        "makestories.io",
+        "Create a new web story with MakeStories."
+    ],
+    [
+        "medium.new",
+        "Medium",
+        "Create a new story on Medium."
+    ],
+    [
+        "story.new",
+        "Medium",
+        "Create a new story on Medium."
+    ],
+    [
+        "canvas.new",
+        "Miri",
+        "Create a new design using Miri."
+    ],
+    [
+        "whiteboard.new",
+        "MiroLite",
+        "Use MiroLite's digital whiteboard to collaborate with your team."
+    ],
+    [
+        "mural.new",
+        "MURAL",
+        "Start using MURAL's digital whiteboard for team collaboration."
+    ],
+    [
+        "broadcast.new",
+        "Mux",
+        "Upload a video and make it streamable with Mux."
+    ],
+    [
+        "encode.new",
+        "Mux",
+        "Upload a video and make it streamable with Mux."
+    ],
+    [
+        "stream.new",
+        "Mux",
+        "Upload a video and make it streamable with Mux."
+    ],
+    [
+        "mybrand.new",
+        "My Brand New Logo",
+        "Create a new logo for your business and brand."
+    ],
+    [
+        "logomaker.new",
+        "Namecheap",
+        "Design a new business logo with Namecheap."
+    ],
+    [
+        "album.new",
+        "Novecore Ltd.",
+        "Upload your music album details to Novecore."
+    ],
+    [
+        "cacoo.new",
+        "Nulab",
+        "Create a new diagram online using Nulab."
+    ],
+    [
+        "cad.new",
+        "Onshape",
+        "Create a new CAD design online."
+    ],
+    [
+        "member.new",
+        "Orbit",
+        "Creates workspace per community to connect online in member.new"
+    ],
+    [
+        "match.new",
+        "Pally",
+        "Initiate spontaneous video chats with strangers using Pally."
+    ],
+    [
+        "patch.new",
+        "Patch Media",
+        "Creates posts online using patch.com"
+    ],
+    [
+        "claims.new",
+        "PicPocket-Labs, Inc.",
+        "File an insurance claim using PicPocket-Labs."
+    ],
+    [
+        "picture.new",
+        "Pictapic",
+        "Get high-quality photo prints delivered right to your door using Pictapic."
+    ],
+    [
+        "sketch.new",
+        "sketch.io",
+        "Create a new sketch with sketch.io."
+    ],
+    [
+        "internet.new",
+        "Skynet",
+        "Start a new blog."
+    ],
+    [
+        "playlist.new",
+        "Spotify",
+        "Create a new Spotify playlist."
+    ],
+    [
+        "stacker.new",
+        "Stacker",
+        "Add a new category and data using studio airportal app."
+    ],
+    [
+        "fiberplane.new",
+        "Studio",
+        "Write in an online notebook using Fiberplane."
+    ],
+    [
+        "recording.new",
+        "Tella",
+        "Start a new screen and camera recording."
+    ],
+    [
+        "tothe.new",
+        "TO THE NEW",
+        "Get started on a new blog post on TO THE NEW."
+    ],
+    [
+        "top.new",
+        "Top",
+        "Get started on a new blog post with Top."
+    ],
+    [
+        "score.new",
+        "Tutteo Limited",
+        "Write a musical score with others using Tutteo's collaborative music app."
+    ],
+    [
+        "thread.new",
+        "Twist",
+        "Create a discussion or new email thread using twist."
+    ],
+    [
+        "chord.new",
+        "Ultimate Guitar",
+        "Add a new tab to the Ultimate Guitar archive."
+    ],
+    [
+        "chords.new",
+        "Ultimate Guitar",
+        "Add a new tab to the Ultimate Guitar archive."
+    ],
+    [
+        "tab.new",
+        "Ultimate Guitar",
+        "Add a new tab to the Ultimate Guitar archive."
+    ],
+    [
+        "tabs.new",
+        "Ultimate Guitar",
+        "Add a new tab to the Ultimate Guitar archive."
+    ],
+    [
+        "vocal.new",
+        "Vocal",
+        "Create and share stories on Vocal."
+    ],
+    [
+        "velo.new",
+        "Wix",
+        "Create a website using Wix."
+    ],
+    [
+        "wiki.new",
+        "YNAW",
+        "Create a new wiki page with YNAW (You Need a Wiki)."
+    ],
+    [
+        "zap.new",
+        "Zapier Inc.",
+        "Create a new zap to automate repetitive tasks using Zapier."
+    ],
+    [
+        "agenda.new",
+        "Agenda Hero",
+        "Create a new agenda with Agenda Hero."
+    ],
+    [
+        "asana.new",
+        "Asana",
+        "Add a new task to your Asana project."
+    ],
+    [
+        "task.new",
+        "Asana",
+        "Add a new task to your Asana project."
+    ],
+    [
+        "io.new",
+        "bit.io",
+        "Create a new data repository on bit.io."
+    ],
+    [
+        "bitly.new",
+        "Bitly",
+        "Create memorable, short links to your website with Bitly."
+    ],
+    [
+        "link.new",
+        "Bitly",
+        "Create memorable, short links to your website with Bitly."
+    ],
+    [
+        "board.new",
+        "Board",
+        "Collaborate remotely on an online whiteboard."
+    ],
+    [
+        "background.new",
+        "Canva",
+        "Design the perfect Zoom background for your virtual meetings using Canva's customizable background templates."
+    ],
+    [
+        "brainstorm.new",
+        "Canva",
+        "Create a new business presentation at brainstorm.new."
+    ],
+    [
+        "matters.new",
+        "Canyon",
+        "Create legal matters using Canyon."
+    ],
+    [
+        "go.new",
+        "Carotrip",
+        "Book car, van, bus, SUV and limos in advance with Carotrip."
+    ],
+    [
+        "coda.new",
+        "Coda",
+        "Create a new doc for teams that combines documents, spreadsheets, and building blocks."
+    ],
+    [
+        "league.new",
+        "CompuSport",
+        "Manage your leagues using CompuSport."
+    ],
+    [
+        "cs.new",
+        "CoScreen",
+        "Share your screen with your coworkers using CoScreen."
+    ],
+    [
+        "version.new",
+        "creativehub",
+        "Share and comment on large files and chat live."
+    ],
+    [
+        "resume.new",
+        "CV2You",
+        "Build a new resume with one of CV2You's customizable templates."
+    ],
+    [
+        "dataproject.new",
+        "Data World",
+        "Create a new project in data.world's data catalog."
+    ],
+    [
+        "dataprojects.new",
+        "Data World",
+        "Create a new project in data.world's data catalog."
+    ],
+    [
+        "dataset.new",
+        "Data World",
+        "Add a new data set to your data.world data catalog."
+    ],
+    [
+        "datasets.new",
+        "Data World",
+        "Add a new data set to your data.world data catalog."
+    ],
+    [
+        "demo.new",
+        "Demodesk",
+        "Launch an instant meeting with Demodesk."
+    ],
+    [
+        "diagram.new",
+        "Diagrams.net",
+        "Create a flowchart diagram to map processes."
+    ],
+    [
+        "diagrams.new",
+        "Diagrams.net",
+        "Create a flowchart diagram to map processes."
+    ],
+    [
+        "paper.new",
+        "Dropbox",
+        "Start a new workspace with Dropbox."
+    ],
+    [
+        "chart.new",
+        "Everviz",
+        "Create interactive charts, maps, and tables using Everviz."
+    ],
+    [
+        "calendar.new",
+        "FreeBusy",
+        "Send a calendar invite with FreeBusy."
+    ],
+    [
+        "freetrade.new",
+        "Freetrade",
+        "Create a new discussion within the Freetrade community."
+    ],
+    [
+        "gamma.new",
+        "Gamma Tech, Inc.",
+        "Create a new memo in Gamma."
+    ],
+    [
+        "glean.new",
+        "Glean",
+        "Create a new multimedia note document using Glean."
+    ],
+    [
+        "cal.new",
+        "Google Calendar",
+        "Create and send a new Google Calendar invite."
+    ],
+    [
+        "meeting.new",
+        "Google Calendar",
+        "Create and send a new Google Calendar invite."
+    ],
+    [
+        "docs.new",
+        "Google Docs",
+        "Create a new document using Google Docs."
+    ],
+    [
+        "document.new",
+        "Google Docs",
+        "Create a new document using Google Docs."
+    ],
+    [
+        "documents.new",
+        "Google Docs",
+        "Create a new document using Google Docs."
+    ],
+    [
+        "form.new",
+        "Google Forms",
+        "Create a new form using Google Forms."
+    ],
+    [
+        "forms.new",
+        "Google Forms",
+        "Create a new form using Google Forms."
+    ],
+    [
+        "keep.new",
+        "Google Keep",
+        "Create a new note using Google Keep."
+    ],
+    [
+        "note.new",
+        "Google Keep",
+        "Create a new note using Google Keep."
+    ],
+    [
+        "notes.new",
+        "Google Keep",
+        "Create a new note using Google Keep."
+    ],
+    [
+        "meet.new",
+        "Google Meet",
+        "Launch a real-time meeting from your browser using Google Meet."
+    ],
+    [
+        "sheets.new",
+        "Google Sheet",
+        "Create a new spreadsheet using Google Sheets."
+    ],
+    [
+        "spreadsheet.new",
+        "Google Sheet",
+        "Create a new spreadsheet using Google Sheets."
+    ],
+    [
+        "spreadsheets.new",
+        "Google Sheet",
+        "Create a new spreadsheet using Google Sheets."
+    ],
+    [
+        "site.new",
+        "Google Sites",
+        "Build and publish a website using Google Sites."
+    ],
+    [
+        "sites.new",
+        "Google Sites",
+        "Build and publish a website using Google Sites."
+    ],
+    [
+        "website.new",
+        "Google Sites",
+        "Build and publish a website using Google Sites."
+    ],
+    [
+        "deck.new",
+        "Google Slides",
+        "Create an online presentation using Google Slides."
+    ],
+    [
+        "presentation.new",
+        "Google Slides",
+        "Create an online presentation using Google Slides."
+    ],
+    [
+        "slide.new",
+        "Google Slides",
+        "Create an online presentation using Google Slides."
+    ],
+    [
+        "slides.new",
+        "Google Slides",
+        "Create an online presentation using Google Slides."
+    ],
+    [
+        "hn.new",
+        "hashnode",
+        "Create a new developer blog post using hashnode."
+    ],
+    [
+        "topic.new",
+        "Higher",
+        "Create a new topic to chat, call and collaborate."
+    ],
+    [
+        "icq.new",
+        "ICQ",
+        "Chat with friends on ICQ."
+    ],
+    [
+        "id.new",
+        "id.new",
+        "Generate test identities for testing purposes."
+    ],
+    [
+        "if.new",
+        "Ideaflow",
+        "Create a new note with Ideaflow."
+    ],
+    [
+        "freehand.new",
+        "InVision",
+        "Collaborate on an online whiteboard using InVision's Freehand."
+    ],
+    [
+        "cv.new",
+        "KickResume",
+        "Create a standout resume with KickResume."
+    ],
+    [
+        "linear.new",
+        "Linear.app",
+        "FIle a new issue in Linear's project management interface."
+    ],
+    [
+        "list.new",
+        "Liner",
+        "Create a new list on Liner."
+    ],
+    [
+        "lucidspark.new",
+        "Lucid",
+        "Use Lucidspark's online whiteboard."
+    ],
+    [
+        "excel.new",
+        "Microsoft Excel",
+        "Create a spreadsheet using Excel."
+    ],
+    [
+        "powerpoint.new",
+        "Microsoft PowerPoint",
+        "Create a new presentation using PowerPoint."
+    ],
+    [
+        "ppt.new",
+        "Microsoft PowerPoint",
+        "Create a new presentation using PowerPoint."
+    ],
+    [
+        "pptx.new",
+        "Microsoft PowerPoint",
+        "Create a new presentation using PowerPoint."
+    ],
+    [
+        "sway.new",
+        "Microsoft Sway",
+        "Create beautiful designs using Microsoft Sway."
+    ],
+    [
+        "docx.new",
+        "Microsoft Word",
+        "Create a new document using Word."
+    ],
+    [
+        "word.new",
+        "Microsoft Word",
+        "Create a new document using Word."
+    ],
+    [
+        "mindmap.new",
+        "MindMeister",
+        "Create a new mindmap and share your ideas on MindMeister."
+    ],
+    [
+        "workshop.new",
+        "Miro",
+        "Design a workshop using Miro."
+    ],
+    [
+        "automation.new",
+        "Monday.com",
+        "Create a new Monday.com board to manage tasks, projects, and team work."
+    ],
+    [
+        "checklist.new",
+        "Monday.com",
+        "Create a new Monday.com board to manage tasks, projects, and team work."
+    ],
+    [
+        "integration.new",
+        "Monday.com",
+        "Create a new Monday.com board to manage tasks, projects, and team work."
+    ],
+    [
+        "monday.new",
+        "Monday.com",
+        "Create a new Monday.com board to manage tasks, projects, and team work."
+    ],
+    [
+        "myweek.new",
+        "Monday.com",
+        "Create a new Monday.com board to manage tasks, projects, and team work."
+    ],
+    [
+        "notification.new",
+        "Monday.com",
+        "Create a new Monday.com board to manage tasks, projects, and team work."
+    ],
+    [
+        "process.new",
+        "Monday.com",
+        "Create a new Monday.com board to manage tasks, projects, and team work."
+    ],
+    [
+        "pulse.new",
+        "Monday.com",
+        "Create a new Monday.com board to manage tasks, projects, and team work."
+    ],
+    [
+        "status.new",
+        "Monday.com",
+        "Create a new Monday.com board to manage tasks, projects, and team work."
+    ],
+    [
+        "update.new",
+        "Monday.com",
+        "Create a new Monday.com board to manage tasks, projects, and team work."
+    ],
+    [
+        "view.new",
+        "Monday.com",
+        "Create a new Monday.com board to manage tasks, projects, and team work."
+    ],
+    [
+        "widget.new",
+        "Monday.com",
+        "Create a new Monday.com board to manage tasks, projects, and team work."
+    ],
+    [
+        "work.new",
+        "Monday.com",
+        "Create a new Monday.com board to manage tasks, projects, and team work."
+    ],
+    [
+        "workspace.new",
+        "Monday.com",
+        "Create a new Monday.com board to manage tasks, projects, and team work."
+    ],
+    [
+        "notion.new",
+        "Notion",
+        "Collaborate with your team using Notion's all-in-one online workspace."
+    ],
+    [
+        "layout.new",
+        "Oryx",
+        "Configure your ergonomic keyboard using Oryx."
+    ],
+    [
+        "webhook.new",
+        "Pipedream",
+        "Create bins and inspect events right from your browser."
+    ],
+    [
+        "prezi.new",
+        "Prezi",
+        "Design beautiful presentations using Prezi."
+    ],
+    [
+        "checkin.new",
+        "Range",
+        "Create check-ins with Range to stay connected with your team."
+    ],
+    [
+        "scan.new",
+        "Scan.new",
+        "Scan a QR code on scan.new."
+    ],
+    [
+        "slab.new",
+        "Slab",
+        "Publish a new topic on Slab."
+    ],
+    [
+        "poll.new",
+        "Slido",
+        "Create a poll for your Slido meeting."
+    ],
+    [
+        "slido.new",
+        "Slido",
+        "Start a new Slido meeting."
+    ],
+    [
+        "sprout.new",
+        "Sprout",
+        "Create a new note on Sprout."
+    ],
+    [
+        "move.new",
+        "Supermove",
+        "Move your home with Supermove."
+    ],
+    [
+        "comments.new",
+        "Tanadium Pte. Ltd.",
+        "Quickly comment on any website with Tanadium."
+    ],
+    [
+        "page.new",
+        "Tettra",
+        "Create a new page in your Tettra knowledge base."
+    ],
+    [
+        "tettra.new",
+        "Tettra",
+        "Create a new page in your Tettra knowledge base."
+    ],
+    [
+        "suggest.new",
+        "Tettra",
+        "Suggest new content for your Tettra knowledge base."
+    ],
+    [
+        "text.new",
+        "Text Editor",
+        "Quickly write a note in this online text editor."
+    ],
+    [
+        "todoist.new",
+        "Todoist",
+        "Create a new project plan and collaborate on tasks using Todoist."
+    ],
+    [
+        "token.new",
+        "Token",
+        "Write a message that you can easily share as a link with anyone."
+    ],
+    [
+        "venncal.new",
+        "Venncal",
+        "Schedule a new event."
+    ],
+    [
+        "chat.new",
+        "Vieta",
+        "Start a new chatroom on Vieta."
+    ],
+    [
+        "wall.new",
+        "Walling",
+        "Create a new wall with Walling or all your ideas, notes, bookmarks, inspiration, and more."
+    ],
+    [
+        "letsmeet.new",
+        "Webex",
+        "Initiate a Webex meeting."
+    ],
+    [
+        "mymeet.new",
+        "Webex",
+        "Initiate a Webex meeting."
+    ],
+    [
+        "webex.new",
+        "Webex",
+        "Initiate a Webex meeting."
+    ],
+    [
+        "todo.new",
+        "WIP",
+        "Add a new task to your WIP todo list."
+    ],
+    [
+        "action.new",
+        "Workona",
+        "Set up a new workspace to manage your Chrome tabs."
+    ],
+    [
+        "zip.new",
+        "Zip Extractor",
+        "Create new zip archive to easily store and share files."
+    ],
+    [
+        "citation.new",
+        "BibGuru",
+        "Add a citation to your bibliography with BibGuru."
+    ],
+    [
+        "lessonplan.new",
+        "Canva",
+        "Create simple lesson plans for kids using templates from Canva."
+    ],
+    [
+        "lessonplans.new",
+        "Canva",
+        "Create simple lesson plans for kids using templates from Canva."
+    ],
+    [
+        "worksheet.new",
+        "Canva",
+        "Create a worksheet for a classroom lesson or assignment using a template from Canva."
+    ],
+    [
+        "code.new",
+        "Code.in",
+        "Learn to code with real-time interactive coding sessions."
+    ],
+    [
+        "course.new",
+        "Eduflow",
+        "Design your course outline with templates from Eduflow."
+    ],
+    [
+        "kahoot.new",
+        "Kahoot",
+        "Create an online quiz using Kahoot."
+    ],
+    [
+        "quiz.new",
+        "Kahoot",
+        "Create an online quiz using Kahoot."
+    ],
+    [
+        "climate.new",
+        "Project drawdown",
+        "Develop climate change solutions using Project drawdown."
+    ],
+    [
+        "presenter.new",
+        "Prowise",
+        "Design classes and presentations with Prowise Presenter."
+    ],
+    [
+        "quizlet.new",
+        "Quizlet",
+        "Create a new study set and test your knowledge using Quizlet."
+    ],
+    [
+        "class.new",
+        "Tabletwise",
+        "Create a new online course on Tabletwise."
+    ],
+    [
+        "assign.new",
+        "Teacher Centric Ltd",
+        "Create new assignments and homework for your students with TeacherCentric."
+    ],
+    [
+        "notice.new",
+        "TeacherCentric Ltd",
+        "Add a new notice on your school calendar with TeacherCentric."
+    ],
+    [
+        "tuition.new",
+        "University of Maryland",
+        "Estimate tuition for the University of Maryland."
+    ],
+    [
+        "fundraiser.new",
+        "Bonfire",
+        "Design custom products to sell online with Bonfire."
+    ],
+    [
+        "merch.new",
+        "Bonfire",
+        "Design custom products to sell online with Bonfire."
+    ],
+    [
+        "shirt.new",
+        "Bonfire",
+        "Design custom products to sell online with Bonfire."
+    ],
+    [
+        "shirts.new",
+        "Bonfire",
+        "Design custom products to sell online with Bonfire."
+    ],
+    [
+        "tshirts.new",
+        "Bonfire",
+        "Design custom products to sell online with Bonfire."
+    ],
+    [
+        "customink.new",
+        "Custom Ink",
+        "Create a custom t-shirt with your own art, text, and more with Custom Ink."
+    ],
+    [
+        "tshirt.new",
+        "Custom Ink",
+        "Create a custom t-shirt with your own art, text, and more with Custom Ink."
+    ],
+    [
+        "shop.new",
+        "eBay",
+        "Create an online shop on eBay."
+    ],
+    [
+        "officephonebooth.new",
+        "Framery",
+        "Customise and order your own Framery office Phone Booth."
+    ],
+    [
+        "catalog.new",
+        "GoDigi",
+        "Create a digital catalog of your products using Godigi."
+    ],
+    [
+        "grail.new",
+        "Grailed",
+        "Buy and sell clothing on Grailed."
+    ],
+    [
+        "grailed.new",
+        "Grailed",
+        "Buy and sell clothing on Grailed."
+    ],
+    [
+        "mobile.new",
+        "Green Panda",
+        "Purchase and sell smartphones on Green Panda."
+    ],
+    [
+        "personalloan.new",
+        "ING",
+        "Apply for a personal loan with ING."
+    ],
+    [
+        "mcmaster-carr.new",
+        "McMASTER-CARR",
+        "Start a new industrial product order using McMASTER-CARR."
+    ],
+    [
+        "mcmaster.new",
+        "McMASTER-CARR",
+        "Start a new industrial product order using McMASTER-CARR."
+    ],
+    [
+        "mcmastercarr.new",
+        "McMASTER-CARR",
+        "Start a new industrial product order using McMASTER-CARR."
+    ],
+    [
+        "mercari.new",
+        "Mercari",
+        "Sell your used stuff on Mercari."
+    ],
+    [
+        "merpay.new",
+        "MiroLite",
+        "Create and share ideas using MicroLite's whiteboard."
+    ],
+    [
+        "neighbor.new",
+        "Neighbor",
+        "List your available storage space on Neighbor."
+    ],
+    [
+        "storage.new",
+        "Neighbor",
+        "List your available storage space on Neighbor."
+    ],
+    [
+        "box.new",
+        "Packlane",
+        "Design custom decorated boxes for your business with Packlane."
+    ],
+    [
+        "art.new",
+        "Point101",
+        "Order framed prints of your favorite photos with Point101."
+    ],
+    [
+        "authenticate.new",
+        "TheRealReal",
+        "Consign luxury items with TheRealReal."
+    ],
+    [
+        "consign.new",
+        "TheRealReal",
+        "Consign luxury items with TheRealReal."
+    ],
+    [
+        "resell.new",
+        "TheRealReal",
+        "Consign luxury items with TheRealReal."
+    ],
+    [
+        "sustain.new",
+        "TheRealReal",
+        "Consign luxury items with TheRealReal."
+    ],
+    [
+        "drink.new",
+        "Absolut Drinks",
+        "Choose your favorite drink recipes and share them with your friends."
+    ],
+    [
+        "room.new",
+        "Airtime Media",
+        "Start a new group hangout to watch content and video chat."
+    ],
+    [
+        "anime.new",
+        "AnimeDotNew",
+        "Create a list of your favorite Anime at anime.new."
+    ],
+    [
+        "add.new",
+        "ClassCalc",
+        "Explore math using ClassCalc's cheat-free calculator app."
+    ],
+    [
+        "golf.new",
+        "Compekun",
+        "Create and record a new golf competition with Compekun."
+    ],
+    [
+        "care.new",
+        "Crossover Health",
+        "Schedule a consultation with Crossover Health."
+    ],
+    [
+        "crossover.new",
+        "Crossover Health",
+        "Schedule a consultation with Crossover Health."
+    ],
+    [
+        "crossoverhealth.new",
+        "Crossover Health",
+        "Schedule a consultation with Crossover Health."
+    ],
+    [
+        "dashlane.new",
+        "Dashlane",
+        "Keep your online accounts secure with Dashlane's password generator."
+    ],
+    [
+        "password.new",
+        "Dashlane",
+        "Keep your online accounts secure with Dashlane's password generator."
+    ],
+    [
+        "discord.new",
+        "Discord",
+        "Start a new Discord community where you can hang out and chat with friends."
+    ],
+    [
+        "bitcoin.new",
+        "eToro",
+        "Buy, sell, and trade Bitcoin on eToro."
+    ],
+    [
+        "btc.new",
+        "eToro",
+        "Buy, sell, and trade Bitcoin on eToro."
+    ],
+    [
+        "eth.new",
+        "eToro",
+        "Buy, sell, and trade Ethereum on eToro."
+    ],
+    [
+        "ethereum.new",
+        "eToro",
+        "Buy, sell, and trade Ethereum on eToro."
+    ],
+    [
+        "tsla.new",
+        "eToro",
+        "Buy, sell, and trade TSLA on eToro."
+    ],
+    [
+        "twtr.new",
+        "eToro",
+        "Buy, sell, and trade TWTR on eToro."
+    ],
+    [
+        "xrp.new",
+        "eToro",
+        "Buy, sell, and trade Ripple on eToro."
+    ],
+    [
+        "stocks.new",
+        "ETORO GROUP LTD",
+        "Open a free stock investing account on eToro."
+    ],
+    [
+        "trade.new%20twtr.new",
+        "ETORO GROUP LTD",
+        "Buy and Trade stocks on eToro."
+    ],
+    [
+        "give.new",
+        "Every.org",
+        "Explore, donate, and share over one million nonprofits on Every.org."
+    ],
+    [
+        "perfume.new",
+        "EveryHuman",
+        "Create a unique scent based on your personality using an algorithmic perfumery."
+    ],
+    [
+        "fairtiq.new",
+        "FAIRTIQ",
+        "Activate your Fairtiq ticket for Swiss public transport."
+    ],
+    [
+        "user.new",
+        "FakePersonGenerator",
+        "Create a fake profile to protect your identity using FakePersonGenerator."
+    ],
+    [
+        "brief.new",
+        "gotomaxx software",
+        "Generate a new invoice."
+    ],
+    [
+        "love.new",
+        "love.new Pick-Up Lines",
+        "Get new pickup lines on love.new."
+    ],
+    [
+        "reservation.new",
+        "OpenTable",
+        "Make a restaurant reservation with OpenTable."
+    ],
+    [
+        "restaurant.new",
+        "OpenTable",
+        "Make a restaurant reservation with OpenTable."
+    ],
+    [
+        "park.new",
+        "ParkMobile",
+        "List or reserve parking spots in your nearby area."
+    ],
+    [
+        "parking.new",
+        "ParkMobile",
+        "List or reserve parking spots in your nearby area."
+    ],
+    [
+        "aed.new",
+        "PulsePoint",
+        "Add your automated external defibrillator to the PulsePoint AED registry to help improve cardiac arrest survival."
+    ],
+    [
+        "event.new",
+        "Purpl",
+        "Create and share event listings on Purpl."
+    ],
+    [
+        "preprint.new",
+        "Research Square",
+        "Share your research as a preprint through Research Square."
+    ],
+    [
+        "recipe.new",
+        "Smartrecipes",
+        "Add your recipe to your Smartrecipes collection."
+    ],
+    [
+        "sms.new%20sms.new",
+        "sms-now",
+        "Send a SMS message to anyone in the United States."
+    ],
+    [
+        "donation.new",
+        "The Human Utility, Inc.",
+        "Donate to help pay the water bill of someone at risk of having their water shut off."
+    ]
+];
