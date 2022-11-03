@@ -11,9 +11,6 @@ weight = 2
 Unfortunately, no. According to MDN's web extension [compatibility chart](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Browser_support_for_JavaScript_APIs#omnibox):
 Safari doesn't support omnibox API, which is essential to this extension.
 
-# Permissions
+### Is it possible to customize the number of suggestions shown in address bar?
 
-### Why does the extension require reading browser history permission?
-
-The sole permission required by the extension is [tabs](https://developer.chrome.com/extensions/tabs), which gives accessing browser tabs information capability.
-We use this permission to open the search result in the `current tab` or `new tab` for the sole purpose. Feel free to check our [Privacy Policy](/privacy/) for more information.
+The number of suggestions is limited to the browser API, currently we can't customize it. Also, each browser have [a different limit number](https://github.com/huhu/search-extension-core/blob/7629fe7a5f896abf630a2b7dc00e9e6141c36c5c/src/compat.js#L18).
