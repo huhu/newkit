@@ -2,7 +2,9 @@ const LOWEST_MATCH_INDEX = 999;
 
 class Searcher {
     constructor(index) {
-        this.index = index;
+        this.index = Object.entries(index).map(([domain, [product, description]]) => {
+            return [domain, product, description];
+        });
     }
 
     search(keyword) {

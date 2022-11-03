@@ -10,7 +10,7 @@
     }
 
     function parseShortcuts() {
-        let shortcuts = [];
+        let shortcuts = Object.create(null);
         let rows = document.querySelectorAll("table tr.data-table__row");
         for (let row of rows) {
             let [links, product, desc] = row.querySelectorAll("td");
@@ -19,18 +19,15 @@
             for (let link of links.querySelectorAll("a")) {
                 let href = link.href.trim();
                 if (href && href.includes('.new')) {
-                    let shortcut = new URL(link.href.trim()).hostname;
-                    // Array of [shortcut, product, description]
-                    shortcuts.push([
-                        shortcut,
-                        product,
-                        desc,
-                    ]);
+                    let domain = new URL(link.href.trim()).hostname;
+                    // Key value pair of <domain, [product, desc]>
+                    shortcuts[domain] = [product, desc];
                 }
             }
         }
 
-        return shortcuts;
+        // Sort by key.
+        return Object.fromEntries(Object.entries(shortcuts).sort());
     }
 
     let shortcuts = parseShortcuts();
