@@ -1571,6 +1571,10 @@ const shortcuts = {
         "Microsoft PowerPoint",
         "Create a new presentation using PowerPoint."
     ],
+    "pr.new": [
+        "StackBlitz",
+        "Create pull request with StackBlitz Codeflow."
+    ],
     "prd.new": [
         "Fable",
         "Create a new PRD using Fable."

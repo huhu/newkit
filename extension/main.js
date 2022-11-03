@@ -22,7 +22,7 @@ const c = new Compat();
         onFormat: (index, item) => {
             return {
                 content: `https://${item.shortcut}`,
-                description: `New: ${c.match(item.name)} - ${item.product} ${c.dim(c.escape(item.desc))}`,
+                description: `New: ${c.match(item.name)} - ${item.product} ${c.dim(c.escape(item.description))}`,
             };
         },
         afterNavigated: (query, result) => {
@@ -43,11 +43,13 @@ const c = new Compat();
     });
 
 
-    chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
         switch (message.action) {
             case "update-index": {
-                IndexManager.setShortcutsIndex(index);
-                searcher = new Searcher(message.index);
+                // Merge new index into old index.
+                let newIndex = Object.assign(await IndexManager.getShortcutsIndex(), message.index);
+                IndexManager.setShortcutsIndex(newIndex);
+                searcher = new Searcher(newIndex);
                 sendResponse(true);
                 break;
             }
@@ -55,8 +57,3 @@ const c = new Compat();
         return true;
     });
 })();
-
-const fileNewIssue = "title=Have you found a bug? Did you feel something was missing?&body=Whatever it was, we'd love to hear from you.";
-chrome.runtime.setUninstallURL(
-    `https://github.com/huhu/newkit/issues/new?${encodeURI(fileNewIssue)}`
-);
