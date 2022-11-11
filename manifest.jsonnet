@@ -35,6 +35,6 @@ json
 .addPermissions(['storage', 'unlimitedStorage'])
 .addContentScript(
   matches=['*://whats.new/shortcuts/'],
-  js=['content-scripts.js'],
+  js=['core/storage.js', 'content-scripts.js', 'index-manager.js', 'shortcuts.js'],
   css=[],
 )

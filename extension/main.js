@@ -42,18 +42,15 @@ const c = new Compat();
         },
     });
 
-
-    chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
-        switch (message.action) {
-            case "update-index": {
-                // Merge new index into old index.
-                let newIndex = Object.assign(await IndexManager.getShortcutsIndex(), message.index);
-                IndexManager.setShortcutsIndex(newIndex);
-                searcher = new Searcher(newIndex);
-                sendResponse(true);
-                break;
+    chrome.storage.onChanged.addListener(changes => {
+        for (let [key, { _oldValue, newValue }] of Object.entries(changes)) {
+            console.log('storage key updated:', key);
+            switch (key) {
+                case "index-shortcut'": {
+                    searcher = new Searcher(newValue);
+                    break;
+                }
             }
         }
-        return true;
     });
 })();

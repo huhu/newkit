@@ -16,15 +16,13 @@ document.addEventListener("DOMContentLoaded", () => {
     injectScripts(["parse.js"]);
 });
 
-window.addEventListener("message", function (event) {
+window.addEventListener("message", async function (event) {
     if (event.source === window &&
         event.data &&
         event.data.direction === "newkit:update-index") {
-        chrome.runtime.sendMessage({action: `update-index`, ...event.data.message},
-            (response) => {
-                console.log(response);
-            }
-        );
+        // Merge new index into old index.
+        let newIndex = Object.assign(await IndexManager.getShortcutsIndex(), event.data.message.index);
+        IndexManager.setShortcutsIndex(newIndex);
     }
 });
 
