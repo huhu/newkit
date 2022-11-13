@@ -10,6 +10,21 @@ class Searcher {
     search(keyword) {
         keyword = keyword.toLowerCase().replace(/[-_\s]/ig, "");
         let result = [];
+        if (!keyword) {
+            // Empty keyword query, return all result.
+            return this.index.map(([shortcut, product, description]) => {
+                let [name] = shortcut.split('.');
+                return {
+                    name,
+                    shortcut,
+                    product,
+                    description,
+                }
+            }).sort((a, b) => {
+                return a.name.localeCompare(b.name);
+            });
+        }
+
         for (let [shortcut, product, description] of this.index) {
             let [name] = shortcut.split('.');
             let nameMatchIndex = name.indexOf(keyword);
