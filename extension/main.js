@@ -54,3 +54,8 @@ const c = new Compat();
         }
     });
 })();
+
+const chromeAction = chrome.action || chrome.browserAction;
+chromeAction.onClicked.addListener(() => {
+    chrome.tabs.create({ url: 'https://new.extension.sh' });
+});
