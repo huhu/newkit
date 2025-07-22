@@ -20,6 +20,7 @@ highlight_theme = "inspired-github"
 juice_logo_name = "Newkit"
 juice_logo_path = "logo.svg"
 juice_extra_menu = [
+    { title = "Geddle", link = "https://geddle.com" },
     { title = "Github", link = "https://github.com/huhu/newkit"}
 ]
 meta_title = "Newkit"
