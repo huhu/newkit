@@ -6,6 +6,7 @@ web-ext-artifacts
 node_modules
 target
 docs/public
+/public
 extension/core
 *.db
 manifest.json
