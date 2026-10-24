@@ -39,6 +39,7 @@ jobs:
           cd docs
           zola build
           grep -q 'href="https://meiguo.app"' public/index.html
+          grep -q 'href="https://aiberm.com"' public/index.html
           printf '%s\n' 'new.extension.sh' > public/CNAME
           : > public/.nojekyll
 
@@ -75,6 +76,7 @@ jobs:
           test -f site-public/CNAME
           test -f site-public/.nojekyll
           grep -q 'href="https://meiguo.app"' site-public/index.html
+          grep -q 'href="https://aiberm.com"' site-public/index.html
           grep -qx 'new.extension.sh' site-public/CNAME
 
           mkdir -p /tmp/public
