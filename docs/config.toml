@@ -10,8 +10,10 @@ theme = "juice"
 
 # Configuration of the Markdown rendering
 [markdown]
-# Zola 0.22 (Cloudflare Pages default) dropped highlight_code/highlight_theme.
-# Keep external_links_external off so rendered links match the 0.17.2 output.
+# CI installs Zola 0.17.2 and publishes docs/public to the `now` branch.
+# highlight_code/highlight_theme are omitted so this file still builds on
+# Zola 0.22, which removed them. Keep external_links_external off so
+# rendered links match the 0.17.2 output.
 external_links_external = false
 
 [extra]

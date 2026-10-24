@@ -1,16 +1,28 @@
+# Build the Zola docs and publish the static site to the `now` branch.
+# GitHub Pages serves that branch (custom domain: new.extension.sh).
+#
+# The core submodule still snap-installs edge Zola from deploy-docs.sh.
+# Install 0.17.2 here instead, the same pin as go/cpp/js and current
+# search-extension-core. Publishing an orphan tree of docs/public avoids
+# the submodule gitlinks that make a `now` checkout fail to clone.
+
 name: Deploy docs
 
 on:
   push:
     branches: [master]
+  pull_request:
   workflow_dispatch:
 
 permissions:
   contents: read
-  deployments: write
+
+concurrency:
+  group: deploy-docs-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -22,15 +34,88 @@ jobs:
           tool: zola@0.17.2
 
       - name: Build docs
-        run: cd docs && zola build
+        run: |
+          set -euo pipefail
+          cd docs
+          zola build
+          grep -q 'href="https://meiguo.app"' public/index.html
+          printf '%s\n' 'new.extension.sh' > public/CNAME
+          : > public/.nojekyll
 
-      - name: Publish to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v4
+      - uses: actions/upload-artifact@v4
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_PAGES_TOKEN }}
-          # newkit Pages project (same account id as the GitHub check URLs).
-          accountId: "8061dbdcbf07c89772f0942f60e775aa"
-          # Detached HEAD cannot infer the production branch, so pass it.
-          command: pages deploy docs/public --project-name=newkit --branch=master
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          wranglerVersion: "3"
+          name: docs-public
+          path: docs/public
+          if-no-files-found: error
+          include-hidden-files: true
+
+  deploy:
+    needs: build
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: docs-public
+          path: site-public
+
+      - name: Publish public to the now branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          test -f site-public/index.html
+          test -f site-public/CNAME
+          test -f site-public/.nojekyll
+          grep -q 'href="https://meiguo.app"' site-public/index.html
+          grep -qx 'new.extension.sh' site-public/CNAME
+
+          mkdir -p /tmp/public
+          cp -a site-public/. /tmp/public/
+
+          git config user.name "GitHub Actions"
+          git config user.email "github-actions-bot@users.noreply.github.com"
+          git checkout --orphan now
+          git rm -rf --cached .
+          find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
+          cp -a /tmp/public/. .
+          git add -A
+          git commit -m "Deploy new version docs"
+          git push --force "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:now
+
+      - name: Serve GitHub Pages from now
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set +e
+          printf '%s\n' '{"build_type":"legacy","source":{"branch":"now","path":"/"}}' > /tmp/pages-source.json
+          printf '%s\n' '{"cname":"new.extension.sh"}' > /tmp/pages-cname.json
+          echo "Configuring GitHub Pages to publish the now branch..."
+          gh api --method POST \
+            -H "Accept: application/vnd.github+json" \
+            "repos/${GITHUB_REPOSITORY}/pages" \
+            --input /tmp/pages-source.json
+          echo "--- update source ---"
+          gh api --method PUT \
+            -H "Accept: application/vnd.github+json" \
+            "repos/${GITHUB_REPOSITORY}/pages" \
+            --input /tmp/pages-source.json
+          echo "--- custom domain ---"
+          gh api --method PUT \
+            -H "Accept: application/vnd.github+json" \
+            "repos/${GITHUB_REPOSITORY}/pages" \
+            --input /tmp/pages-cname.json
+          echo "--- site ---"
+          gh api -H "Accept: application/vnd.github+json" "repos/${GITHUB_REPOSITORY}/pages"
+          echo "--- request build ---"
+          gh api --method POST \
+            -H "Accept: application/vnd.github+json" \
+            "repos/${GITHUB_REPOSITORY}/pages/builds"
